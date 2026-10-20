@@ -173,7 +173,7 @@ const defaultEnglishTranslation = {
     'faq-5': { question: "Can I request a product that isn't listed?", answer: 'Yes. Buyers can contact the team with specific product requirements for sourcing discussion.' },
     'faq-6': { question: 'Do you provide packaging solutions?', answer: "Packaging solutions are part of Jagdamb Global Trade's growing capabilities and can be discussed according to product and buyer requirements." },
     'faq-7': { question: 'How can I enquire about a product?', answer: 'Use the Enquire Now button on a product card or contact the business through WhatsApp.' },
-    'faq-8': { question: 'How can I contact Jagdamb Global Trade?', answer: 'WhatsApp: +91 86684 04068 | Email: Official Business Email' },
+    'faq-8': { question: 'How can I contact Jagdamb Global Trade?', answer: 'WhatsApp: +91 94033 40502 | Email: Official Business Email' },
     'faq-9': { question: 'Can international buyers contact you?', answer: 'Yes. International buyers can contact Jagdamb Global Trade with product, quantity, packaging, and destination requirements.' },
     'faq-10': { question: 'What information should I include in an enquiry?', answer: 'Include product name, quantity, packaging preference, destination, and any specific requirements.' },
     'faq-11': { question: 'Are the products sourced from India?', answer: 'Jagdamb Global Trade is an India-based export-import firm and its catalogue focuses on products sourced from India for international trade.' },

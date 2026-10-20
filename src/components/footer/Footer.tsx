@@ -65,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({
               {t.footer.startEnquiry}
             </Button>
             <a
-              href="https://wa.me/918668404068"
+              href="https://wa.me/919403340502"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -144,8 +144,8 @@ export const Footer: React.FC<FooterProps> = ({
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <a href="https://wa.me/918668404068" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                  +91 86684 04068
+                <a href="https://wa.me/919403340502" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  +91 94033 40502
                 </a>
               </p>
               <p className="flex items-center gap-2">

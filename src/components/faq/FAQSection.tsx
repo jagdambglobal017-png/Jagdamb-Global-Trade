@@ -18,7 +18,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ t, onOpenEnquiry }) => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/918668404068', '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/919403340502', '_blank', 'noopener,noreferrer');
   };
 
   return (

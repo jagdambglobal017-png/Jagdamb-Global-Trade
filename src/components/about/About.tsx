@@ -19,11 +19,19 @@ export const About: React.FC<AboutProps> = ({ t }) => {
             <ScrollReveal animation="fade-right">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/80">
                 <img
-                  src="/assets/about_warehouse_export.jpg"
+                  src="/assets/about_warehouse.jpg"
                   alt={t.about.imageAlt}
                   className="w-full h-[420px] sm:h-[500px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slateDark-950/70 via-transparent to-transparent" />
+                
+                {/* QUALITY & INSPECTION BADGE */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="px-3.5 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider shadow-md inline-flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    Quality Inspection & Processing Facility
+                  </span>
+                </div>
                 
                 {/* FLOATING ESTABLISHED BADGE */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 sm:p-6 rounded-2xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-xl flex items-center gap-4">

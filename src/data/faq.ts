@@ -43,7 +43,7 @@ export const faqData: FAQItem[] = [
   {
     id: 'faq-8',
     question: 'How can I contact Jagdamb Global Trade?',
-    answer: 'WhatsApp: +91 86684 04068 | Email: jagdambglobaltrade@gmail.com'
+    answer: 'WhatsApp: +91 94033 40502 | Email: jagdambglobaltrade@gmail.com'
   },
   {
     id: 'faq-9',

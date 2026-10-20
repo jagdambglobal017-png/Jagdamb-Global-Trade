@@ -7,13 +7,17 @@ export type ProductCategory =
 export interface Product {
   id: string;
   name: string;
+  englishName: string;
+  scientificName: string;
   category: ProductCategory;
+  tagline: string;
   description: string;
   image: string;
   origin: string;
   availability: string;
   featured?: boolean;
-  scientificName?: string;
+  highlights: string[];
   packagingOptions?: string[];
   hsCode?: string;
+  badge?: string;
 }

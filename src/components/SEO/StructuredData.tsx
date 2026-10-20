@@ -23,12 +23,12 @@ export const StructuredData: React.FC = () => {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-8668404068',
+      telephone: '+91-9403340502',
       contactType: 'Sales & Export Enquiries',
       availableLanguage: ['English', 'Hindi', 'Marathi'],
     },
     sameAs: [
-      'https://wa.me/918668404068',
+      'https://wa.me/919403340502',
     ],
   };
 
@@ -37,7 +37,7 @@ export const StructuredData: React.FC = () => {
     '@type': 'WholesaleStore',
     name: 'Jagdamb Global Trade',
     image: 'https://jagdambglobaltrade.com/assets/about_warehouse.jpg',
-    telephone: '+91-8668404068',
+    telephone: '+91-9403340502',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Dighol Vasti, Kallam',

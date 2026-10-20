@@ -36,7 +36,7 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
 
   if (!isOpen) return null;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -60,7 +60,7 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
     const text = encodeURIComponent(
       `Hello Jagdamb Global Trade,\n\nI want to enquire about:\n- Product: ${formData.product}\n- Name: ${formData.fullName}\n- Company: ${formData.companyName}\n- Quantity: ${formData.quantity}\n- Destination: ${formData.destination}\n- Requirements: ${formData.message}`
     );
-    window.open(`https://wa.me/918668404068?text=${text}`, '_blank');
+    window.open(`https://wa.me/919403340502?text=${text}`, '_blank');
   };
 
   return (
@@ -114,14 +114,30 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* SELECTED PRODUCT BANNER */}
-                <div className="p-3.5 rounded-xl bg-slate-100 border border-slate-200">
-                  <span className="block text-[10px] font-extrabold uppercase text-slate-600">
+                {/* SELECTED PRODUCT SELECTOR */}
+                <div>
+                  <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
                     {t.enquiry.productLabel}
-                  </span>
-                  <span className="font-heading font-extrabold text-sm text-slateDark-950">
-                    {formData.product}
-                  </span>
+                  </label>
+                  <select
+                    name="product"
+                    value={formData.product}
+                    onChange={handleChange}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm font-bold text-slateDark-950 focus:outline-none focus:ring-2 focus:ring-slate-800"
+                  >
+                    <option value="Quinoa">Quinoa (Chenopodium quinoa)</option>
+                    <option value="Safed Musali Powder">Safed Musali Powder (Chlorophytum borivilianum)</option>
+                    <option value="Shatavari Root Powder">Shatavari Root Powder (Asparagus racemosus)</option>
+                    <option value="Chia Seeds">Chia Seeds (Salvia hispanica)</option>
+                    <option value="Pumpkin Seeds">Pumpkin Seeds (Cucurbita pepo)</option>
+                    <option value="Hibiscus Powder">Hibiscus Powder (Hibiscus sabdariffa)</option>
+                    <option value="Tulsi Leaves Powder">Tulsi Leaves Powder (Ocimum sanctum)</option>
+                    <option value="Amla Powder">Amla Powder (Phyllanthus emblica)</option>
+                    <option value="Senna Leaves Powder">Senna Leaves Powder (Cassia angustifolia)</option>
+                    <option value="Moringa Powder">Moringa Powder (Moringa oleifera)</option>
+                    <option value="General Export Product Enquiry">General Export Product Enquiry</option>
+                    <option value="Custom Bulk Order">Custom Bulk Order</option>
+                  </select>
                 </div>
 
                 <div>
@@ -237,7 +253,7 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
           {/* DRAWER FOOTER HELPLINE */}
           <div className="p-4 bg-slate-50 border-t border-slate-200 text-center text-xs text-slate-600 font-bold flex items-center justify-center gap-2">
             <ShieldCheck className="w-4 h-4 text-slate-700" />
-            <span>{t.enquiry.helplineText} +91 86684 04068</span>
+            <span>{t.enquiry.helplineText} +91 94033 40502</span>
           </div>
 
         </div>

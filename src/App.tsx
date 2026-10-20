@@ -8,6 +8,7 @@ import { About } from './components/about/About';
 import { WhyUs } from './components/why-us/WhyUs';
 import { ProductsSection } from './components/our-hero-product/ProductsSection';
 import { ProductEnquiryDrawer } from './components/our-hero-product/ProductEnquiryDrawer';
+import { AskAnythingSection } from './components/ask-anything/AskAnythingSection';
 import { FAQSection } from './components/faq/FAQSection';
 import { ContactSection } from './components/contact/ContactSection';
 import { Footer } from './components/footer/Footer';
@@ -103,6 +104,9 @@ export const App: React.FC = () => {
 
         {/* PRODUCTS SECTION WITH REFLECTIVE CARDS */}
         <ProductsSection t={t} onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* SECTION: YOU CAN ASK FOR ANYTHING...! */}
+        <AskAnythingSection />
 
         {/* FREQUENTLY ASKED QUESTIONS SECTION */}
         <FAQSection t={t} onOpenEnquiry={() => handleOpenEnquiry()} />

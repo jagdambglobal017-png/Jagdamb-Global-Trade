@@ -63,7 +63,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* 5 ELEGANT BORDER GLOW CARDS GRID WITH INCREASED GLOW RADIUS */}
+        {/* 6 ELEGANT CARDS: 5 VALUE CARDS + 1 QUALITY INSPECTION SHOWCASE */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {valueCards.map((card, idx) => (
             <ScrollReveal key={idx} animation="scale-up" delay={idx * 100}>
@@ -76,9 +76,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
                 glowIntensity={1.4}
                 coneSpread={35}
                 colors={['#F97316', '#EA580C', '#FBBF24']}
-                className={`h-full shadow-xl transition-all duration-300 ${
-                  idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                className="h-full shadow-xl transition-all duration-300"
               >
                 <div className="p-7 h-full flex flex-col justify-between">
                   <div>
@@ -99,6 +97,28 @@ export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
               </BorderGlow>
             </ScrollReveal>
           ))}
+
+          {/* 6TH CARD: QUALITY INSPECTION & PACKAGING FACILITY */}
+          <ScrollReveal animation="scale-up" delay={500}>
+            <div className="relative rounded-[28px] overflow-hidden shadow-xl border border-white/80 h-full min-h-[320px] group flex flex-col justify-end">
+              <img
+                src="/assets/about_warehouse.jpg"
+                alt="Workers inspecting and packaging agricultural superfood products"
+                className="absolute inset-0 w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="relative z-10 p-7 bg-gradient-to-t from-slateDark-950/95 via-slateDark-950/60 to-transparent text-white pt-24">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-orange-400 block mb-1">
+                  Quality Assurance & Packaging
+                </span>
+                <h3 className="font-heading font-extrabold text-xl text-white mb-2">
+                  Inspecting & Packaging Facility
+                </h3>
+                <p className="text-xs text-slate-200 leading-relaxed font-medium">
+                  Workers inspecting, grading, and packaging premium agricultural superfoods in compliance with international export standards.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
 
       </div>

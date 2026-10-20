@@ -11,7 +11,7 @@ interface ContactSectionProps {
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry }) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/918668404068', '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/919403340502', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -74,7 +74,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
                     {t.contact.phoneRole}
                   </span>
                   <h3 className="font-heading font-extrabold text-lg text-slateDark-950 mt-0.5">
-                    +91 86684 04068
+                    +91 94033 40502
                   </h3>
                   <p className="text-xs text-slateDark-900 font-bold mt-1">
                     {t.contact.phoneDesc}
