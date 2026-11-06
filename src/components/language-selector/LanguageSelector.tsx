@@ -50,50 +50,47 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         <ChevronDown className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-white' : ''}`} />
       </button>
 
-      {/* WIDE CENTERED POPUP MODAL FOR LANGUAGES */}
+      {/* POPUP MODAL FOR LANGUAGES - STYLED JUST LIKE THE 3-BAR MENU POPUP */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
           {/* Backdrop click to close */}
           <div
             className="absolute inset-0"
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Wide Centered Modal Card */}
-          <div className="relative z-10 w-full max-w-lg sm:max-w-2xl lg:max-w-3xl rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-5 sm:p-7 space-y-4 max-h-[88vh] overflow-y-auto animate-scale-up">
+          {/* Centered Modal Card (Identical to 3-bar menu popup) */}
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
             
-            {/* MODAL HEADER */}
-            <div className="pb-3 border-b border-gray-200/80 flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center shadow-sm flex-shrink-0">
-                  <Globe className="w-5 h-5 text-white" />
-                </div>
+            {/* POPUP HEADER MATCHING 3-BAR MENU */}
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/logo.png"
+                  alt="Jagdamb Global Trade"
+                  className="h-14 sm:h-16 w-auto object-contain"
+                />
                 <div>
-                  <h3 className="font-heading font-extrabold text-base sm:text-lg text-slateDark-950 leading-tight">
+                  <h3 className="font-heading font-extrabold text-base text-slateDark-950 leading-tight">
                     Select Language
                   </h3>
-                  <span className="text-xs text-orange-600 font-extrabold">
-                    34 Languages Available Worldwide
+                  <span className="text-xs text-orange-600 font-extrabold uppercase tracking-wider block">
+                    34 Languages Available
                   </span>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="hidden sm:inline-block text-xs text-slate-700 font-extrabold bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
-                  {selectedOption.name} ({selectedOption.nativeName})
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors"
-                  aria-label="Close language selector"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors"
+                aria-label="Close language selector"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
             {/* CATEGORIES GRID WITH FULL NAMES */}
-            <div className="space-y-4">
+            <div className="space-y-4 pt-1">
               {categories.map((cat) => {
                 const list = languageOptions.filter((opt) => opt.category === cat);
                 return (
@@ -102,7 +99,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                       {cat}
                     </h4>
-                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       {list.map((opt: LanguageOption) => {
                         const isSelected = opt.code === currentLanguage;
                         return (
@@ -112,21 +109,21 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                               onSelectLanguage(opt.code);
                               setIsOpen(false);
                             }}
-                            className={`flex items-center justify-between text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm transition-all border ${
+                            className={`flex items-center justify-between text-left px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm transition-all border ${
                               isSelected
                                 ? 'bg-slate-800 text-white font-extrabold border-slate-700 shadow-md'
-                                : 'bg-slate-50/80 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-300 text-slateDark-950 border-slate-200/70 active:scale-95'
+                                : 'bg-slate-50/90 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 text-slateDark-950 border-transparent active:scale-95'
                             }`}
                           >
                             <div className="flex flex-col truncate">
-                              <span className="font-extrabold text-xs sm:text-sm leading-snug">
+                              <span className="font-extrabold text-xs sm:text-sm leading-tight">
                                 {opt.name}
                               </span>
-                              <span className={`text-[11px] ${isSelected ? 'text-slate-300' : 'text-slate-500 font-medium'}`}>
+                              <span className={`text-[10px] sm:text-[11px] ${isSelected ? 'text-slate-300' : 'text-slate-500 font-medium'}`}>
                                 {opt.nativeName}
                               </span>
                             </div>
-                            {isSelected && <Check className="w-4 h-4 text-white ml-2 flex-shrink-0" />}
+                            {isSelected && <Check className="w-4 h-4 text-white ml-1.5 flex-shrink-0" />}
                           </button>
                         );
                       })}

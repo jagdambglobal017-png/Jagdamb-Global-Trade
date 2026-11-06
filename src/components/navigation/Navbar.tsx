@@ -44,26 +44,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 flex justify-between items-center ${
+        className={`fixed top-0 right-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 w-full md:w-auto md:max-w-[calc(100vw-240px)] flex justify-end ${
           isScrolled ? 'py-1.5 sm:py-2.5' : 'py-2 sm:py-3.5'
         }`}
       >
-        {/* BRAND LOGO VISIBLE ON MOBILE & DESKTOP NAVBAR (2X ENLARGED) */}
-        <a href="#hero" className="flex items-center gap-2 z-50 group flex-shrink-0">
-          <img
-            src="/logo.png"
-            alt="Jagdamb Global Trade"
-            className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
-          />
-        </a>
-
         {/* FLOATING PILL CONTAINER */}
         <div
-          className={`rounded-full transition-all duration-500 ${
-            isScrolled ? 'glass-nav-scrolled px-3 sm:px-6 py-1.5 sm:py-2.5' : 'glass-nav px-3 sm:px-6 py-2 sm:py-3'
+          className={`rounded-full transition-all duration-500 w-full md:w-auto ${
+            isScrolled ? 'glass-nav-scrolled px-3.5 sm:px-6 py-1.5 sm:py-2.5' : 'glass-nav px-3.5 sm:px-6 py-2 sm:py-3'
           }`}
         >
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-8">
+          <div className="flex items-center justify-end gap-2 sm:gap-3 md:gap-8">
 
             {/* DESKTOP NAV LINKS */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -95,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* MOBILE NAVIGATION CONTROLS */}
-            <div className="flex items-center gap-2 md:hidden">
+            <div className="flex items-center justify-end gap-2 md:hidden w-full">
               <LanguageSelector
                 currentLanguage={currentLanguage}
                 onSelectLanguage={onSelectLanguage}
