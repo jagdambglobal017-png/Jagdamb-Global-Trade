@@ -33,21 +33,30 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-slateDark-950/70 via-slateDark-950/20 to-slateDark-950/30" />
       </div>
 
-      {/* LOGO STUCK TO TOP LEFT CORNER OF HERO SECTION */}
-      <div className="absolute top-3 left-3 sm:top-6 sm:left-8 md:left-12 z-30 flex items-center justify-center transition-all duration-300 hover:scale-105">
+      {/* DESKTOP CORNER LOGO */}
+      <div className="hidden md:flex absolute top-6 left-8 md:left-12 z-30 items-center justify-center transition-all duration-300 hover:scale-105">
         <img 
           src="/logo.png" 
           alt="Jagdamb Global Trade" 
-          className="h-14 sm:h-24 md:h-36 lg:h-52 w-auto object-contain drop-shadow-xl" 
+          className="h-36 lg:h-52 w-auto object-contain drop-shadow-xl" 
         />
       </div>
 
       {/* HERO CONTENT WRAPPER */}
-      <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 text-center">
+      <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 text-center">
         
         {/* HERO CONTENT */}
         <div className="space-y-5 sm:space-y-6 w-full">
           
+          {/* MOBILE HERO BRAND LOGO DISPLAY */}
+          <div className="flex md:hidden justify-center mb-1">
+            <img
+              src="/logo.png"
+              alt="Jagdamb Global Trade"
+              className="h-24 w-auto object-contain drop-shadow-2xl animate-fadeIn"
+            />
+          </div>
+
           {/* TOP TAGLINE BADGE */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-white text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-white" />

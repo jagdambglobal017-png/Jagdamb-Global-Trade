@@ -44,16 +44,26 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 right-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 w-full md:w-auto md:max-w-[calc(100vw-240px)] flex justify-end ${
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 flex justify-between items-center ${
           isScrolled ? 'py-2 sm:py-2.5' : 'py-2.5 sm:py-4'
         }`}
       >
+        {/* BRAND LOGO VISIBLE ON MOBILE & DESKTOP NAVBAR */}
+        <a href="#hero" className="flex items-center gap-2 z-50 group flex-shrink-0">
+          <img
+            src="/logo.png"
+            alt="Jagdamb Global Trade"
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+          />
+        </a>
+
+        {/* FLOATING PILL CONTAINER */}
         <div
-          className={`rounded-full transition-all duration-500 w-full md:w-auto ${
-            isScrolled ? 'glass-nav-scrolled px-3.5 sm:px-6 py-2 sm:py-2.5' : 'glass-nav px-3.5 sm:px-6 py-2 sm:py-3'
+          className={`rounded-full transition-all duration-500 ${
+            isScrolled ? 'glass-nav-scrolled px-3 sm:px-6 py-1.5 sm:py-2.5' : 'glass-nav px-3 sm:px-6 py-2 sm:py-3'
           }`}
         >
-          <div className="flex items-center justify-between md:justify-end md:gap-8">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-8">
 
             {/* DESKTOP NAV LINKS */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -91,64 +101,95 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectLanguage={onSelectLanguage}
               />
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-full bg-slate-800 text-white hover:bg-slate-700 active:scale-95 transition-all shadow-sm"
-                aria-label="Toggle Navigation Menu"
+                onClick={() => setMobileMenuOpen(true)}
+                className="p-2 sm:p-2.5 rounded-full bg-slate-800 text-white hover:bg-slate-700 active:scale-95 transition-all shadow-md flex items-center justify-center"
+                aria-label="Open Navigation Menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <Menu className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* MOBILE BACKDROP & GLASSMENU PANEL */}
+      {/* MOBILE POPUP MENU - OPENS IN THE MIDDLE AS A POPUP */}
       {mobileMenuOpen && (
-        <>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
+          {/* Backdrop click to close */}
           <div
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden animate-fadeIn"
+            className="absolute inset-0"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="md:hidden fixed inset-x-3 sm:inset-x-6 top-16 sm:top-20 z-50 rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-2xl p-5 sm:p-6 animate-fadeInUp max-h-[85vh] overflow-y-auto">
-            <div className="flex flex-col gap-4">
-              <nav className="flex flex-col gap-1.5">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-3 rounded-xl text-sm font-extrabold text-slateDark-950 hover:bg-gray-100 hover:text-slate-800 active:bg-gray-200 transition-all flex items-center justify-between"
-                  >
-                    <span>{link.label}</span>
-                    <span className="text-xs text-orange-500 font-bold">→</span>
-                  </a>
-                ))}
-              </nav>
-              <div className="h-px bg-gray-200 my-1" />
-              <div className="flex flex-col gap-2.5">
-                <Button
-                  variant="primary"
-                  fullWidth
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenEnquiry();
-                  }}
-                >
-                  {t.nav.enquireNow}
-                </Button>
-                <a
-                  href="https://wa.me/919403340502"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-sm shadow-md"
-                >
-                  <MessageSquare className="w-4 h-4 mr-2" />
-                  {t.nav.whatsAppUs}
-                </a>
+
+          {/* Centered Modal Card in the Middle */}
+          <div className="relative z-10 w-full max-w-sm rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
+            {/* POPUP HEADER WITH LOGO & CLOSE */}
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/logo.png"
+                  alt="Jagdamb Global Trade"
+                  className="h-9 w-auto object-contain"
+                />
+                <div>
+                  <h3 className="font-heading font-extrabold text-sm text-slateDark-950 leading-tight">
+                    Jagdamb Global Trade
+                  </h3>
+                  <span className="text-[10px] text-orange-600 font-extrabold uppercase tracking-wider block">
+                    Domestic & Global Trade
+                  </span>
+                </div>
               </div>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors"
+                aria-label="Close Menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* NAV LINKS */}
+            <nav className="flex flex-col gap-1.5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-extrabold text-slateDark-950 hover:bg-orange-50 hover:text-orange-600 active:bg-orange-100 transition-all flex items-center justify-between border border-transparent hover:border-orange-200"
+                >
+                  <span>{link.label}</span>
+                  <span className="text-xs text-orange-500 font-bold">→</span>
+                </a>
+              ))}
+            </nav>
+
+            <div className="h-px bg-gray-200 my-1" />
+
+            {/* ACTION BUTTONS */}
+            <div className="flex flex-col gap-2.5 pt-1">
+              <Button
+                variant="primary"
+                fullWidth
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenEnquiry();
+                }}
+              >
+                {t.nav.enquireNow}
+              </Button>
+              <a
+                href="https://wa.me/919403340502"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center py-3 rounded-full bg-[#1e4620] hover:bg-[#153416] text-white font-extrabold text-sm shadow-md transition-colors"
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                {t.nav.whatsAppUs}
+              </a>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
