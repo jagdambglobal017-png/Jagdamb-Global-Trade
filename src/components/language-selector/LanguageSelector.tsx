@@ -17,18 +17,32 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const modalCardRef = useRef<HTMLDivElement>(null);
 
   const selectedOption = languageOptions.find((opt) => opt.code === currentLanguage) || languageOptions[0];
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+    if (!isOpen) return;
+
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node;
+      // Do not close if clicking inside trigger button or inside the modal card
+      if (
+        (dropdownRef.current && dropdownRef.current.contains(target)) ||
+        (modalCardRef.current && modalCardRef.current.contains(target))
+      ) {
+        return;
       }
+      setIsOpen(false);
     };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const categories: Array<'INDIA' | 'ASIA' | 'EUROPE' | 'MIDDLE EAST & AFRICA'> = [
     'INDIA',
@@ -61,7 +75,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           />
 
           {/* Centered Modal Card (Never hidden behind Chrome address bar, with hidden scrollbar) */}
-          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] p-5 sm:p-6 space-y-4 max-h-[76dvh] sm:max-h-[82vh] overflow-y-auto no-scrollbar animate-scale-up">
+          <div ref={modalCardRef} className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] p-5 sm:p-6 space-y-4 max-h-[76dvh] sm:max-h-[82vh] overflow-y-auto no-scrollbar animate-scale-up">
             
             {/* POPUP HEADER MATCHING 3-BAR MENU */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
@@ -106,7 +120,10 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                         return (
                           <button
                             key={opt.code}
-                            onClick={() => {
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
                               onSelectLanguage(opt.code);
                               setIsOpen(false);
                             }}
