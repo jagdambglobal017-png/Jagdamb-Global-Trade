@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Globe, ChevronDown, Check, X } from 'lucide-react';
 import { languageOptions } from '../../data/translations';
 import { LanguageCode, LanguageOption } from '../../types/translation';
@@ -50,17 +51,17 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         <ChevronDown className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-white' : ''}`} />
       </button>
 
-      {/* POPUP MODAL FOR LANGUAGES - STYLED JUST LIKE THE 3-BAR MENU POPUP */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
+      {/* POPUP MODAL FOR LANGUAGES - STYLED JUST LIKE THE 3-BAR MENU POPUP & PORTALED TO BODY */}
+      {isOpen && typeof document !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3.5 sm:p-6 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
           {/* Backdrop click to close */}
           <div
             className="absolute inset-0"
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Centered Modal Card (Identical to 3-bar menu popup) */}
-          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
+          {/* Centered Modal Card (Never hidden behind Chrome address bar, with hidden scrollbar) */}
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] p-5 sm:p-6 space-y-4 max-h-[76dvh] sm:max-h-[82vh] overflow-y-auto no-scrollbar animate-scale-up">
             
             {/* POPUP HEADER MATCHING 3-BAR MENU */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
@@ -133,7 +134,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
               })}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

@@ -107,6 +107,17 @@
   background: #EA580C;
 }
 
+/* HIDE SCROLLBAR UTILITY */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
 /* SCROLLFLOAT GRADIENT TEXT */
 .why-us-scroll-text {
   background: linear-gradient(135deg, #0F172A 0%, #F97316 50%, #EA580C 100%);

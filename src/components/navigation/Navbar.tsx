@@ -112,8 +112,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Centered Modal Card in the Middle (Wide & Spacious) */}
-          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
+          {/* Centered Modal Card in the Middle (Never hidden behind Chrome address bar, with hidden scrollbar) */}
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[76dvh] sm:max-h-[82vh] overflow-y-auto no-scrollbar">
             {/* POPUP HEADER WITH 2X LOGO & CLOSE */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
               <div className="flex items-center gap-3">
