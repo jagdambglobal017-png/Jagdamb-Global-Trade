@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* COL 1: BRAND INFORMATION (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-40 sm:h-[300px] w-auto object-contain drop-shadow-md" />
+              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-20 sm:h-36 md:h-48 w-auto object-contain drop-shadow-md" />
             </div>
 
             <p className="text-xs uppercase font-extrabold tracking-widest text-slate-400">
@@ -93,12 +93,15 @@ export const Footer: React.FC<FooterProps> = ({
               {t.footer.brandDesc}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-bold text-slate-400">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 text-xs font-bold text-slate-400">
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-200">
                 {t.footer.foundedLabel}
               </span>
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-200">
                 OWNER — SIDDHI VIJAY ATKARE
+              </span>
+              <span className="px-3 py-1 rounded-full bg-orange-950/80 border border-orange-700/60 text-orange-300">
+                DOMESTIC & GLOBAL TRADE
               </span>
             </div>
           </div>
@@ -110,8 +113,8 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300 font-medium">
               <li><a href="#hero" className="hover:text-white transition-colors">{t.nav.home}</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a></li>
               <li><a href="#products" className="hover:text-white transition-colors">{t.nav.products}</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a></li>
               <li><a href="#whyUs" className="hover:text-white transition-colors">{t.nav.whyUs}</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a></li>
@@ -150,13 +153,13 @@ export const Footer: React.FC<FooterProps> = ({
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jagdambglobaltrade@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jagdambglobaltrade@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-white break-all">
                   jagdambglobaltrade@gmail.com
                 </a>
               </p>
               <p className="flex items-start gap-2 text-xs leading-relaxed">
                 <MapPin className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
-                <span>Dighol Vasti, Kallam, District Dharashiv, Maharashtra, India</span>
+                <span>kallam,Dist. Dharashiv, Maharashtra.</span>
               </p>
             </div>
           </div>

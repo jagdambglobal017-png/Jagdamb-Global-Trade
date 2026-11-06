@@ -12,7 +12,7 @@ export const AskAnythingSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-up">
           <div className="text-center py-4">
-            <h2 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight sm:tracking-normal uppercase leading-tight select-none">
+            <h2 className="font-heading font-black text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight sm:tracking-normal uppercase leading-tight select-none break-words">
               <span className="text-white drop-shadow-sm">YOU CAN ASK FOR </span>
               <span className="text-[#F97316] drop-shadow-[0_0_25px_rgba(249,115,22,0.45)] transition-all duration-300 hover:scale-105 inline-block">
                 ANYTHING

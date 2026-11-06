@@ -25,8 +25,8 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ isLoading }) => 
         <span className="font-heading font-extrabold text-2xl tracking-wide text-white">
           Jagdamb <span className="text-gold-400">Global Trade</span>
         </span>
-        <span className="text-[10px] uppercase font-bold tracking-widest text-gold-400/80">
-          Connecting India With Global Markets
+        <span className="text-[10px] uppercase font-bold tracking-widest text-gold-400/80 text-center px-4">
+          Connecting India With Domestic & Global Markets
         </span>
       </div>
     </div>

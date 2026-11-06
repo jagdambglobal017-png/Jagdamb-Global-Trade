@@ -93,25 +93,25 @@ export const App: React.FC = () => {
 
       {/* 4. MAIN CONTENT SECTIONS */}
       <main>
-        {/* HERO SECTION WITH LIGHTRAYS & CARGO SHIP */}
+        {/* 1. HERO SECTION WITH LIGHTRAYS & CARGO SHIP */}
         <Hero t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
 
-        {/* ABOUT US SECTION */}
-        <About t={t} />
-
-        {/* WHY US SECTION WITH SCROLLFLOAT GSAP */}
-        <WhyUs t={t} />
-
-        {/* PRODUCTS SECTION WITH REFLECTIVE CARDS */}
+        {/* 2. PRODUCTS SECTION WITH REFLECTIVE CARDS (2ND PLACE) */}
         <ProductsSection t={t} onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* SECTION: YOU CAN ASK FOR ANYTHING...! */}
+        {/* 3. ABOUT US SECTION (3RD PLACE) */}
+        <About t={t} />
+
+        {/* 4. WHY US SECTION WITH SCROLLFLOAT GSAP */}
+        <WhyUs t={t} />
+
+        {/* 5. SECTION: YOU CAN ASK FOR ANYTHING...! */}
         <AskAnythingSection />
 
-        {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+        {/* 6. FREQUENTLY ASKED QUESTIONS SECTION */}
         <FAQSection t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
 
-        {/* DIRECT CONTACT SECTION */}
+        {/* 7. DIRECT CONTACT SECTION */}
         <ContactSection t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
       </main>
 

@@ -33,9 +33,9 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center space-y-8">
+      <div className="relative z-10 flex flex-col items-center space-y-6 sm:space-y-8 px-4 text-center">
         <motion.div
-          className="w-24 h-24 rounded-full bg-forest-900 text-gold-400 flex items-center justify-center border-2 border-gold-400/40 shadow-[0_0_40px_rgba(212,175,55,0.2)]"
+          className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-forest-900 text-gold-400 flex items-center justify-center border-2 border-gold-400/40 shadow-[0_0_40px_rgba(212,175,55,0.2)]"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
@@ -44,26 +44,26 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <Anchor className="w-12 h-12 drop-shadow-lg" />
+            <Anchor className="w-10 h-10 sm:w-12 sm:h-12 drop-shadow-lg" />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center text-center space-y-3"
+          className="flex flex-col items-center text-center space-y-2 sm:space-y-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <span className="font-heading font-extrabold text-4xl md:text-5xl tracking-wide text-white">
+          <span className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-wide text-white">
             Jagdamb <span className="text-gold-400">Global Trade</span>
           </span>
-          <span className="text-xs md:text-sm uppercase font-bold tracking-widest text-gold-400/80">
-            Connecting India With Global Markets
+          <span className="text-[10px] sm:text-xs md:text-sm uppercase font-bold tracking-widest text-gold-400/80">
+            Connecting India With Domestic & Global Markets
           </span>
         </motion.div>
 
         <motion.div
-          className="w-64 h-[2px] bg-white/10 rounded-full mt-10 overflow-hidden relative"
+          className="w-48 sm:w-64 h-[2px] bg-white/10 rounded-full mt-6 sm:mt-10 overflow-hidden relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
@@ -79,3 +79,4 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     </motion.div>
   );
 };
+

@@ -70,7 +70,7 @@ export const ScrollFloat: React.FC<ScrollFloatProps> = ({
   return (
     <h2
       ref={containerRef}
-      className={`why-us-scroll text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-center ${containerClassName}`}
+      className={`why-us-scroll text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-center break-words px-2 ${containerClassName}`}
       style={{ perspective: '1000px' }}
     >
       {characters.map((char, index) => (

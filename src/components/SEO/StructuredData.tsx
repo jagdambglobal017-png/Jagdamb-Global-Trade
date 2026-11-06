@@ -16,8 +16,8 @@ export const StructuredData: React.FC = () => {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Dighol Vasti, Kallam',
-      addressLocality: 'District Dharashiv',
+      streetAddress: 'kallam',
+      addressLocality: 'Dist. Dharashiv',
       addressRegion: 'Maharashtra',
       addressCountry: 'India',
     },
@@ -40,8 +40,8 @@ export const StructuredData: React.FC = () => {
     telephone: '+91-9403340502',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Dighol Vasti, Kallam',
-      addressLocality: 'District Dharashiv',
+      streetAddress: 'kallam',
+      addressLocality: 'Dist. Dharashiv',
       addressRegion: 'Maharashtra',
       addressCountry: 'India',
     },

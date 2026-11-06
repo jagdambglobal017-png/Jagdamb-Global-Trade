@@ -34,24 +34,24 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       </div>
 
       {/* LOGO STUCK TO TOP LEFT CORNER OF HERO SECTION */}
-      <div className="absolute top-4 left-4 sm:top-8 sm:left-12 z-30 flex items-center justify-center transition-all duration-300 hover:scale-105">
+      <div className="absolute top-3 left-3 sm:top-6 sm:left-8 md:left-12 z-30 flex items-center justify-center transition-all duration-300 hover:scale-105">
         <img 
           src="/logo.png" 
           alt="Jagdamb Global Trade" 
-          className="h-32 sm:h-[280px] w-auto object-contain drop-shadow-xl" 
+          className="h-14 sm:h-24 md:h-36 lg:h-52 w-auto object-contain drop-shadow-xl" 
         />
       </div>
 
       {/* HERO CONTENT WRAPPER */}
-      <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 pt-28 pb-16 text-center">
+      <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 text-center">
         
         {/* HERO CONTENT */}
-        <div className="space-y-6 w-full">
+        <div className="space-y-5 sm:space-y-6 w-full">
           
           {/* TOP TAGLINE BADGE */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-white text-[11px] font-extrabold tracking-widest uppercase shadow-md">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-white text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-white" />
-            <span>{t.hero.tagline}</span>
+            <span>{t.hero.tagline} • Domestic & Global Trade</span>
           </div>
 
           {/* H1 MAIN HEADLINE */}
@@ -61,52 +61,54 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
           </h1>
 
           {/* SUBHEADLINE TEXT */}
-          <p className="text-sm sm:text-base lg:text-lg text-slate-100 font-medium max-w-xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="text-xs sm:text-base lg:text-lg text-slate-100 font-medium max-w-xl mx-auto leading-relaxed drop-shadow-md">
             {t.hero.subheadline}
           </p>
 
           {/* HERO CTA BUTTONS WITH LIQUID METAL SHADER EFFECT */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-3">
             {/* 1. EXPLORE PRODUCTS LIQUID METAL BUTTON */}
-            <a href="#products">
+            <a href="#products" className="w-full sm:w-auto">
               <LiquidMetalButton label={t.hero.exploreBtn} />
             </a>
 
             {/* 2. WHATSAPP US LIQUID METAL BUTTON */}
-            <LiquidMetalButton
-              label={t.hero.whatsAppBtn}
-              onClick={handleWhatsAppClick}
-            />
+            <div className="w-full sm:w-auto">
+              <LiquidMetalButton
+                label={t.hero.whatsAppBtn}
+                onClick={handleWhatsAppClick}
+              />
+            </div>
           </div>
 
           {/* HERO FEATURE HIGHLIGHTS */}
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center pt-6 border-t border-white/20">
-            <div className="flex flex-col items-center gap-1.5">
-              <ShieldCheck className="w-7 h-7 text-orange-400 mb-1 drop-shadow-md" />
+          <div className="mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center pt-5 sm:pt-6 border-t border-white/20">
+            <div className="flex flex-col items-center gap-1">
+              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
               <div>
                 <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.qualityBadge}</span>
                 <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.originBadge}</span>
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-1.5">
-              <Globe2 className="w-7 h-7 text-orange-400 mb-1 drop-shadow-md" />
+            <div className="flex flex-col items-center gap-1">
+              <Globe2 className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
               <div>
-                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.shippingBadge}</span>
-                <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.readyBadge}</span>
+                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">Domestic & Export</span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">Pan-India & Global</span>
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-1.5">
-              <span className="w-7 h-7 rounded-full bg-orange-400 text-white flex items-center justify-center font-bold text-xs mb-1 shadow-md">25</span>
+            <div className="flex flex-col items-center gap-1">
+              <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange-400 text-white flex items-center justify-center font-bold text-xs mb-0.5 sm:mb-1 shadow-md">25</span>
               <div>
                 <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.foundedBadge}</span>
                 <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.firmBadge}</span>
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-1.5">
-              <MessageSquare className="w-7 h-7 text-orange-400 mb-1 drop-shadow-md" />
+            <div className="flex flex-col items-center gap-1">
+              <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
               <div>
                 <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.responseBadge}</span>
                 <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.whatsAppBadge}</span>
@@ -117,11 +119,11 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
         </div>
 
         {/* SCROLL INDICATOR */}
-        <div className="mt-4 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <a
-            href="#about"
-            className="p-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white transition-all shadow-md"
-            aria-label="Scroll to About section"
+            href="#products"
+            className="p-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white transition-all shadow-md active:scale-90"
+            aria-label="Scroll to Products section"
           >
             <ArrowDown className="w-4 h-4" />
           </a>

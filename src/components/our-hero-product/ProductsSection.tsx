@@ -19,12 +19,12 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
   };
 
   return (
-    <section id="products" className="py-20 relative overflow-hidden bg-[#EFEADF] text-slateDark-950">
+    <section id="products" className="py-16 sm:py-20 relative overflow-hidden bg-[#EFEADF] text-slateDark-950">
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-slate-300/30 rounded-full blur-3xl -z-0 pointer-events-none" />
       <div className="absolute bottom-1/3 left-10 w-80 h-80 bg-orange-200/20 rounded-full blur-3xl -z-0 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10 sm:space-y-12">
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -37,19 +37,19 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
               Premium Superfoods & Ayurvedic Grains
             </h2>
             <p className="text-xs sm:text-sm text-slateDark-900 font-bold max-w-2xl mx-auto leading-relaxed">
-              Pure, natural, and authentic products carefully sourced from Indian farms and certified for bulk international export.
+              Pure, natural, and authentic products carefully sourced from Indian farms, available for domestic wholesale trade across India and certified bulk international export.
             </p>
           </ScrollReveal>
         </div>
 
         {/* COMPACT NORMAL-SIZED PRODUCTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {productsData.map((product, index) => (
             <ScrollReveal key={product.id} animation="fade-up" delay={index * 80}>
               <ReflectiveCard className="flex flex-col justify-between h-full shadow-md hover:shadow-xl rounded-2xl overflow-hidden group border border-slate-200/90 bg-white transition-all duration-300">
                 
                 {/* Image Section - Normal sized compact header */}
-                <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-[#EFEADF] border-b border-slate-200">
+                <div className="relative w-full h-44 sm:h-52 overflow-hidden bg-[#EFEADF] border-b border-slate-200">
                   <img
                     src={product.image}
                     alt={`${product.name} - Jagdamb Global Trade`}
@@ -57,34 +57,34 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
                     loading={index < 3 ? 'eager' : 'lazy'}
                   />
                   {/* Floating badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-                    <span className="px-2.5 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
+                  <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex items-center justify-between gap-2 pointer-events-none">
+                    <span className="px-2 sm:px-2.5 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow-sm">
                       Pure • Natural
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#1e4620]/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
-                      Export Ready
+                    <span className="px-2 sm:px-2.5 py-0.5 rounded-full bg-[#1e4620]/90 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow-sm">
+                      Domestic & Export
                     </span>
                   </div>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-4">
                   
                   {/* Title & Tagline */}
                   <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-[11px] font-extrabold text-[#2d6a30] uppercase tracking-wider">
+                    <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-extrabold text-[#2d6a30] uppercase tracking-wider">
                       <Tag className="w-3 h-3 text-[#2d6a30]" />
                       <span>{product.tagline}</span>
                     </div>
-                    <h3 className="font-heading font-extrabold text-xl text-slateDark-950 leading-snug">
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-slateDark-950 leading-snug">
                       {product.name}
                     </h3>
                   </div>
 
                   {/* Botanical Names Strip (English & Scientific) */}
-                  <div className="p-3 rounded-xl bg-[#F9F7F2] border border-slate-200/90 space-y-1.5 text-xs">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-[#F9F7F2] border border-slate-200/90 space-y-1.5 text-xs">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 flex items-center gap-1 flex-shrink-0">
                         <Globe className="w-3 h-3 text-slate-600" />
                         English Name:
                       </span>
@@ -93,7 +93,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
                       </strong>
                     </div>
                     <div className="flex items-center justify-between gap-2 border-t border-slate-200/60 pt-1.5">
-                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 flex items-center gap-1 flex-shrink-0">
                         <Microscope className="w-3 h-3 text-[#1e4620]" />
                         Scientific Name:
                       </span>
@@ -103,8 +103,8 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
                     </div>
                   </div>
 
-                  {/* Description incorporating English & Scientific names */}
-                  <p className="text-xs text-slate-700 leading-relaxed font-medium line-clamp-3">
+                  {/* Description in full sentence */}
+                  <p className="text-xs text-slate-700 leading-relaxed font-medium">
                     {product.description}
                   </p>
 
@@ -128,7 +128,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
 
                   {/* Logistics / HS Code */}
                   <div className="pt-1 flex items-center justify-between text-[10px] font-bold text-slate-500 border-t border-slate-100">
-                    <span>Origin: {product.origin}</span>
+                    <span>Origin: {product.origin} • Domestic & Export</span>
                     {product.hsCode && (
                       <span className="px-2 py-0.5 rounded bg-orange-50 border border-orange-200 text-orange-800 font-extrabold">
                         HS: {product.hsCode}
@@ -139,17 +139,17 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ t, onOpenEnqui
                 </div>
 
                 {/* Compact Action Buttons */}
-                <div className="p-3.5 bg-slate-50 border-t border-slate-200 flex gap-2">
+                <div className="p-3 sm:p-3.5 bg-slate-50 border-t border-slate-200 flex gap-2">
                   <button
                     onClick={() => onOpenEnquiry(product.name)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-[#1e4620] hover:bg-[#153416] text-white font-extrabold text-xs transition-colors shadow-sm flex items-center justify-center gap-1.5"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-[#1e4620] hover:bg-[#153416] text-white font-extrabold text-xs transition-colors shadow-sm flex items-center justify-center gap-1.5 active:scale-95"
                   >
                     <span>Enquire</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <button
                     onClick={() => handleWhatsAppEnquiry(product.name, product.scientificName)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-extrabold text-xs transition-colors flex items-center justify-center gap-1.5 border border-slate-300 shadow-sm"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-extrabold text-xs transition-colors flex items-center justify-center gap-1.5 border border-slate-300 shadow-sm active:scale-95"
                   >
                     <MessageSquare className="w-3.5 h-3.5 text-[#1e4620]" />
                     <span>WhatsApp</span>

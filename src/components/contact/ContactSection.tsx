@@ -15,11 +15,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-[#F5F2EB] text-slateDark-950">
+    <section id="contact" className="py-16 sm:py-24 relative overflow-hidden bg-[#F5F2EB] text-slateDark-950">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-slate-300/30 rounded-full blur-3xl -z-0 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10 sm:space-y-16">
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -32,17 +32,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
               {t.contact.heading}
             </h2>
             <p className="text-xs sm:text-sm text-slateDark-900 font-bold max-w-xl mx-auto leading-relaxed">
-              {t.contact.intro}
+              Connect with us for domestic wholesale trade across India or international export shipments. We ensure prompt quotes, custom packaging, and reliable logistics.
             </p>
           </ScrollReveal>
         </div>
 
         {/* 4 CONTACT CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
           {/* CARD 1: OWNER */}
           <ScrollReveal animation="fade-up" delay={100}>
-            <div className="p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-md">
                   <UserCheck className="w-6 h-6 text-white" />
@@ -64,7 +64,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
 
           {/* CARD 2: WHATSAPP / PHONE */}
           <ScrollReveal animation="fade-up" delay={200}>
-            <div className="p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-md">
                   <Phone className="w-6 h-6 text-white" />
@@ -84,7 +84,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
               <div className="pt-4">
                 <button
                   onClick={handleWhatsAppClick}
-                  className="inline-flex items-center gap-1.5 text-xs font-extrabold text-slate-800 hover:text-slate-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-extrabold text-slate-800 hover:text-slate-600 transition-colors active:scale-95"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>{t.contact.whatsAppBtn}</span>
@@ -95,7 +95,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
 
           {/* CARD 3: EMAIL */}
           <ScrollReveal animation="fade-up" delay={300}>
-            <div className="p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-md">
                   <Mail className="w-6 h-6 text-white" />
@@ -105,7 +105,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
                     {t.contact.emailRole}
                   </span>
                   <h3 className="font-heading font-extrabold text-sm text-slateDark-950 mt-0.5">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jagdambglobaltrade@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jagdambglobaltrade@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors break-all">
                       jagdambglobaltrade@gmail.com
                     </a>
                   </h3>
@@ -119,7 +119,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
 
           {/* CARD 4: HEADQUARTERS */}
           <ScrollReveal animation="fade-up" delay={400}>
-            <div className="p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-md">
                   <MapPin className="w-6 h-6 text-white" />
@@ -129,7 +129,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
                     {t.contact.hqRole}
                   </span>
                   <p className="text-xs text-slateDark-950 font-extrabold mt-1 leading-relaxed">
-                    {t.contact.hqAddress}
+                    kallam,Dist. Dharashiv, Maharashtra.
                   </p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
 
         {/* CALLOUT ENQUIRY CARD WITH GLASSMORPHISM */}
         <ScrollReveal animation="scale-up">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white/45 backdrop-blur-2xl border border-white/70 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white/45 backdrop-blur-2xl border border-white/70 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="space-y-3 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-white text-[11px] font-extrabold tracking-widest uppercase shadow-sm">
                 <Send className="w-3.5 h-3.5 text-white" />
@@ -154,11 +154,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
-              <Button variant="primary" size="lg" onClick={onOpenEnquiry}>
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
+              <Button variant="primary" size="lg" onClick={onOpenEnquiry} fullWidth={true} className="sm:w-auto">
                 {t.contact.startBtn}
               </Button>
-              <Button variant="whatsapp" size="lg" onClick={handleWhatsAppClick}>
+              <Button variant="whatsapp" size="lg" onClick={handleWhatsAppClick} fullWidth={true} className="sm:w-auto">
                 {t.contact.whatsAppBtn}
               </Button>
             </div>

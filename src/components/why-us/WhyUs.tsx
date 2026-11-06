@@ -39,14 +39,14 @@ export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
   ];
 
   return (
-    <section id="whyUs" className="py-24 relative overflow-hidden bg-[#EFEADF] text-slateDark-950">
+    <section id="whyUs" className="py-16 sm:py-24 relative overflow-hidden bg-[#EFEADF] text-slateDark-950">
       {/* Background grid dots overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* LARGE SCROLLFLOAT HEADING */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 sm:mb-16 text-center">
           <ScrollFloat
             animationDuration={1}
             ease="back.inOut(2)"

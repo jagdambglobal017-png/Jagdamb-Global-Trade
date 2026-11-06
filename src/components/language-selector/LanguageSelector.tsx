@@ -50,7 +50,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 sm:w-96 max-h-[80vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-2xl z-50 p-4 divide-y divide-gray-100 animate-fadeInUp">
+        <div className="absolute right-0 mt-2 w-[calc(100vw-24px)] max-w-sm sm:w-96 max-h-[75vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-2xl z-50 p-4 divide-y divide-gray-100 animate-fadeInUp">
           <div className="pb-2 mb-2 flex items-center justify-between">
             <span className="text-xs font-extrabold uppercase tracking-wider text-slate-800 flex items-center">
               <Globe className="w-3.5 h-3.5 mr-1 text-slate-800" /> Select Language (34 Available)

@@ -71,16 +71,16 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
         <div className="w-screen max-w-md bg-white text-slateDark-950 shadow-2xl flex flex-col justify-between overflow-y-auto">
           
           {/* DRAWER HEADER */}
-          <div className="p-6 bg-slate-800 text-white flex items-center justify-between shadow-md">
+          <div className="p-4 sm:p-6 bg-slate-800 text-white flex items-center justify-between shadow-md">
             <div>
               <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-300">
                 {t.enquiry.systemTag}
               </span>
-              <h3 className="font-heading font-extrabold text-xl">
+              <h3 className="font-heading font-extrabold text-lg sm:text-xl">
                 {t.enquiry.title}
               </h3>
             </div>
@@ -94,7 +94,7 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
           </div>
 
           {/* DRAWER BODY */}
-          <div className="p-6 space-y-6 flex-1">
+          <div className="p-4 sm:p-6 space-y-5 sm:space-y-6 flex-1">
             {submitted ? (
               <div className="py-12 text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center mx-auto shadow-inner">
