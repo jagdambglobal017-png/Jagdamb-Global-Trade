@@ -38,80 +38,105 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
   return (
     <div className={`relative inline-block text-left ${className}`} ref={dropdownRef}>
+      {/* TRIGGER BUTTON SHOWING FULL LANGUAGE NAME */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Select Language"
-        className="inline-flex items-center justify-between px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs font-extrabold uppercase tracking-wider rounded-full bg-slate-800 text-white border border-slate-700 shadow-md hover:bg-slate-700 active:scale-95 transition-all duration-200 cursor-pointer"
+        className="inline-flex items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-extrabold tracking-wide rounded-full bg-slate-800 text-white border border-slate-700 shadow-md hover:bg-slate-700 active:scale-95 transition-all duration-200 cursor-pointer"
       >
-        <Globe className="w-3.5 h-3.5 mr-1 sm:mr-1.5 text-white" />
-        <span>{selectedOption.code.toUpperCase()}</span>
-        <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180 text-white' : ''}`} />
+        <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 text-white flex-shrink-0" />
+        <span className="font-bold">{selectedOption.name}</span>
+        <ChevronDown className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-white' : ''}`} />
       </button>
 
+      {/* WIDE CENTERED POPUP MODAL FOR LANGUAGES */}
       {isOpen && (
-        <>
-          {/* MOBILE BACKDROP - CLOSES ON TAP */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
+          {/* Backdrop click to close */}
           <div
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm sm:hidden"
+            className="absolute inset-0"
             onClick={() => setIsOpen(false)}
           />
 
-          {/* POPUP: CENTERED MODAL ON MOBILE, ANCHORED DROPDOWN ON DESKTOP */}
-          <div className="fixed inset-x-3 sm:inset-x-auto top-1/2 -translate-y-1/2 sm:translate-y-0 sm:absolute sm:right-0 sm:top-full sm:mt-2 w-auto sm:w-96 max-h-[82vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-2xl z-50 p-4 divide-y divide-gray-100 animate-scale-up sm:animate-fadeInUp">
-            <div className="pb-2.5 mb-2 flex items-center justify-between">
-              <span className="text-xs font-extrabold uppercase tracking-wider text-slate-800 flex items-center">
-                <Globe className="w-3.5 h-3.5 mr-1.5 text-slate-800" /> Select Language (34 Available)
-              </span>
+          {/* Wide Centered Modal Card */}
+          <div className="relative z-10 w-full max-w-lg sm:max-w-2xl lg:max-w-3xl rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-5 sm:p-7 space-y-4 max-h-[88vh] overflow-y-auto animate-scale-up">
+            
+            {/* MODAL HEADER */}
+            <div className="pb-3 border-b border-gray-200/80 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center shadow-sm flex-shrink-0">
+                  <Globe className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-heading font-extrabold text-base sm:text-lg text-slateDark-950 leading-tight">
+                    Select Language
+                  </h3>
+                  <span className="text-xs text-orange-600 font-extrabold">
+                    34 Languages Available Worldwide
+                  </span>
+                </div>
+              </div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] text-slateDark-800 font-bold bg-gray-200 px-2 py-0.5 rounded-full">
-                  {selectedOption.nativeName}
+                <span className="hidden sm:inline-block text-xs text-slate-700 font-extrabold bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+                  {selectedOption.name} ({selectedOption.nativeName})
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="sm:hidden p-1 rounded-full hover:bg-gray-200 text-slate-700"
+                  className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors"
                   aria-label="Close language selector"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            {categories.map((cat) => {
-              const list = languageOptions.filter((opt) => opt.category === cat);
-              return (
-                <div key={cat} className="py-2.5">
-                  <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-slate-800 mb-2">
-                    {cat}
-                  </h4>
-                  <div className="grid grid-cols-2 gap-1.5">
-                    {list.map((opt: LanguageOption) => {
-                      const isSelected = opt.code === currentLanguage;
-                      return (
-                        <button
-                          key={opt.code}
-                          onClick={() => {
-                            onSelectLanguage(opt.code);
-                            setIsOpen(false);
-                          }}
-                          className={`flex items-center justify-between text-left px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                            isSelected
-                              ? 'bg-slate-800 text-white font-extrabold shadow-sm'
-                              : 'text-slateDark-950 hover:bg-gray-200 hover:text-slate-900 active:bg-gray-300'
-                          }`}
-                        >
-                          <span className="truncate">{opt.nativeName}</span>
-                          {isSelected && <Check className="w-3.5 h-3.5 text-white ml-1 flex-shrink-0" />}
-                        </button>
-                      );
-                    })}
+            {/* CATEGORIES GRID WITH FULL NAMES */}
+            <div className="space-y-4">
+              {categories.map((cat) => {
+                const list = languageOptions.filter((opt) => opt.category === cat);
+                return (
+                  <div key={cat} className="space-y-2">
+                    <h4 className="text-[11px] font-black uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                      {cat}
+                    </h4>
+                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                      {list.map((opt: LanguageOption) => {
+                        const isSelected = opt.code === currentLanguage;
+                        return (
+                          <button
+                            key={opt.code}
+                            onClick={() => {
+                              onSelectLanguage(opt.code);
+                              setIsOpen(false);
+                            }}
+                            className={`flex items-center justify-between text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm transition-all border ${
+                              isSelected
+                                ? 'bg-slate-800 text-white font-extrabold border-slate-700 shadow-md'
+                                : 'bg-slate-50/80 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-300 text-slateDark-950 border-slate-200/70 active:scale-95'
+                            }`}
+                          >
+                            <div className="flex flex-col truncate">
+                              <span className="font-extrabold text-xs sm:text-sm leading-snug">
+                                {opt.name}
+                              </span>
+                              <span className={`text-[11px] ${isSelected ? 'text-slate-300' : 'text-slate-500 font-medium'}`}>
+                                {opt.nativeName}
+                              </span>
+                            </div>
+                            {isSelected && <Check className="w-4 h-4 text-white ml-2 flex-shrink-0" />}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

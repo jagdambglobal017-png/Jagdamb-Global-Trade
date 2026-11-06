@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* COL 1: BRAND INFORMATION (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-20 sm:h-36 md:h-48 w-auto object-contain drop-shadow-md" />
+              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-36 sm:h-56 md:h-72 w-auto object-contain drop-shadow-md" />
             </div>
 
             <p className="text-xs uppercase font-extrabold tracking-widest text-slate-400">

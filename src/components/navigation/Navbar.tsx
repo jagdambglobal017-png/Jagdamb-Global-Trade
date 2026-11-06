@@ -45,15 +45,15 @@ export const Navbar: React.FC<NavbarProps> = ({
     <>
       <header
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 flex justify-between items-center ${
-          isScrolled ? 'py-2 sm:py-2.5' : 'py-2.5 sm:py-4'
+          isScrolled ? 'py-1.5 sm:py-2.5' : 'py-2 sm:py-3.5'
         }`}
       >
-        {/* BRAND LOGO VISIBLE ON MOBILE & DESKTOP NAVBAR */}
+        {/* BRAND LOGO VISIBLE ON MOBILE & DESKTOP NAVBAR (2X ENLARGED) */}
         <a href="#hero" className="flex items-center gap-2 z-50 group flex-shrink-0">
           <img
             src="/logo.png"
             alt="Jagdamb Global Trade"
-            className="h-10 sm:h-12 md:h-14 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform"
           />
         </a>
 
@@ -121,21 +121,21 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Centered Modal Card in the Middle */}
-          <div className="relative z-10 w-full max-w-sm rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
-            {/* POPUP HEADER WITH LOGO & CLOSE */}
+          {/* Centered Modal Card in the Middle (Wide & Spacious) */}
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[90vh] overflow-y-auto">
+            {/* POPUP HEADER WITH 2X LOGO & CLOSE */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <img
                   src="/logo.png"
                   alt="Jagdamb Global Trade"
-                  className="h-9 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
                 <div>
-                  <h3 className="font-heading font-extrabold text-sm text-slateDark-950 leading-tight">
+                  <h3 className="font-heading font-extrabold text-base text-slateDark-950 leading-tight">
                     Jagdamb Global Trade
                   </h3>
-                  <span className="text-[10px] text-orange-600 font-extrabold uppercase tracking-wider block">
+                  <span className="text-xs text-orange-600 font-extrabold uppercase tracking-wider block">
                     Domestic & Global Trade
                   </span>
                 </div>
