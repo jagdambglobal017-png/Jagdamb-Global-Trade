@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jagdambglobaltrade.com/sitemap.xml
+

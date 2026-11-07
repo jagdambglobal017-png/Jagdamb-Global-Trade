@@ -125,18 +125,12 @@ export const ProductEnquiryDrawer: React.FC<ProductEnquiryDrawerProps> = ({
                     onChange={handleChange}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm font-bold text-slateDark-950 focus:outline-none focus:ring-2 focus:ring-slate-800"
                   >
-                    <option value="Quinoa">Quinoa (Chenopodium quinoa)</option>
-                    <option value="Safed Musali Powder">Safed Musali Powder (Chlorophytum borivilianum)</option>
-                    <option value="Shatavari Root Powder">Shatavari Root Powder (Asparagus racemosus)</option>
-                    <option value="Chia Seeds">Chia Seeds (Salvia hispanica)</option>
-                    <option value="Pumpkin Seeds">Pumpkin Seeds (Cucurbita pepo)</option>
-                    <option value="Hibiscus Powder">Hibiscus Powder (Hibiscus sabdariffa)</option>
-                    <option value="Tulsi Leaves Powder">Tulsi Leaves Powder (Ocimum sanctum)</option>
+                    <option value="Sample Request - Moringa, Amla, Stevia">Sample Request (Moringa, Amla & Stevia)</option>
+                    <option value="Moringa Leaf Powder">Moringa Leaf Powder (Moringa oleifera)</option>
                     <option value="Amla Powder">Amla Powder (Phyllanthus emblica)</option>
-                    <option value="Senna Leaves Powder">Senna Leaves Powder (Cassia angustifolia)</option>
-                    <option value="Moringa Powder">Moringa Powder (Moringa oleifera)</option>
-                    <option value="General Export Product Enquiry">General Export Product Enquiry</option>
-                    <option value="Custom Bulk Order">Custom Bulk Order</option>
+                    <option value="Stevia Powder">Stevia Powder (Stevia rebaudiana)</option>
+                    <option value="Other Herbal Powders Request">Other Indian Herbal Powders (On Request)</option>
+                    <option value="General Export Product Enquiry">General Export Enquiry</option>
                   </select>
                 </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollFloat } from './ScrollFloat';
 import { TranslationDictionary } from '../../types/translation';
-import { CheckCircle2, TrendingUp, PackageCheck, Users, ShieldAlert } from 'lucide-react';
+import { CheckCircle2, FlaskConical, FileText, MessageSquare } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 import { BorderGlow } from '../common/BorderGlow';
 
@@ -10,31 +10,26 @@ interface WhyUsProps {
 }
 
 export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
-  const valueCards = [
+  const cards = [
     {
       icon: <CheckCircle2 className="w-6 h-6 text-white" />,
-      title: t.whyUs.card1Title,
-      desc: t.whyUs.card1Desc,
+      title: 'Clear specifications',
+      desc: 'Mesh size, moisture %, colour, form, and lab reports defined per order. Clear, transparent specs with zero ambiguity before you purchase.',
     },
     {
-      icon: <ShieldAlert className="w-6 h-6 text-white" />,
-      title: t.whyUs.card2Title,
-      desc: t.whyUs.card2Desc,
+      icon: <FlaskConical className="w-6 h-6 text-white" />,
+      title: 'Sample first',
+      desc: 'Samples available on request. Evaluate aroma, mesh fineness, color, and solubility firsthand before placing bulk orders.',
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-white" />,
-      title: t.whyUs.card3Title,
-      desc: t.whyUs.card3Desc,
+      icon: <FileText className="w-6 h-6 text-white" />,
+      title: 'Export documentation handled',
+      desc: 'We handle export documentation including Certificate of Origin, Phytosanitary Certificate, Commercial Invoice, and Packing List for smooth Dubai/GCC customs.',
     },
     {
-      icon: <PackageCheck className="w-6 h-6 text-white" />,
-      title: t.whyUs.card4Title,
-      desc: t.whyUs.card4Desc,
-    },
-    {
-      icon: <Users className="w-6 h-6 text-white" />,
-      title: t.whyUs.card5Title,
-      desc: t.whyUs.card5Desc,
+      icon: <MessageSquare className="w-6 h-6 text-white" />,
+      title: 'Direct communication with the owner on WhatsApp',
+      desc: 'No middlemen or delayed responses. Chat directly with owner Siddhi Vijay Atkare on WhatsApp for instant answers, quotes, and order updates.',
     },
   ];
 
@@ -59,66 +54,44 @@ export const WhyUs: React.FC<WhyUsProps> = ({ t }) => {
             {t.whyUs.heading}
           </ScrollFloat>
           <p className="text-center text-xs sm:text-sm font-extrabold text-slate-800 uppercase tracking-widest mt-2">
-            {t.whyUs.subtag}
+            Simple • Honest • Professional
           </p>
         </div>
 
-        {/* 6 ELEGANT CARDS: 5 VALUE CARDS + 1 QUALITY INSPECTION SHOWCASE */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {valueCards.map((card, idx) => (
+        {/* 4 CARDS AS REQUIRED BY BRIEF */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {cards.map((card, idx) => (
             <ScrollReveal key={idx} animation="scale-up" delay={idx * 100}>
               <BorderGlow
                 edgeSensitivity={45}
                 glowColor="25 95 53"
                 backgroundColor="#FAF7F0"
-                borderRadius={28}
-                glowRadius={45}
-                glowIntensity={1.4}
+                borderRadius={24}
+                glowRadius={40}
+                glowIntensity={1.3}
                 coneSpread={35}
-                colors={['#F97316', '#EA580C', '#FBBF24']}
-                className="h-full shadow-xl transition-all duration-300"
+                colors={['#F97316', '#EA580C', '#10B981']}
+                className="h-full shadow-lg transition-all duration-300"
               >
-                <div className="p-7 h-full flex flex-col justify-between">
+                <div className="p-6 sm:p-7 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center mb-6 shadow-md">
+                    <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-5 shadow-md">
                       {card.icon}
                     </div>
-                    <h3 className="font-heading font-extrabold text-xl text-slateDark-950 mb-3 group-hover:text-slate-700 transition-colors">
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-slateDark-950 mb-3 leading-snug">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-slateDark-900 leading-relaxed font-bold">
+                    <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-semibold">
                       {card.desc}
                     </p>
                   </div>
-                  <div className="pt-4 flex justify-end text-slate-400 font-mono text-xs font-bold">
+                  <div className="pt-4 flex justify-end text-orange-600 font-mono text-xs font-bold">
                     0{idx + 1}
                   </div>
                 </div>
               </BorderGlow>
             </ScrollReveal>
           ))}
-
-          {/* 6TH CARD: QUALITY INSPECTION & PACKAGING FACILITY */}
-          <ScrollReveal animation="scale-up" delay={500}>
-            <div className="relative rounded-[28px] overflow-hidden shadow-xl border border-white/80 h-full min-h-[320px] group flex flex-col justify-end">
-              <img
-                src="/assets/about_warehouse.jpg"
-                alt="Workers inspecting and packaging agricultural superfood products"
-                className="absolute inset-0 w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="relative z-10 p-7 bg-gradient-to-t from-slateDark-950/95 via-slateDark-950/60 to-transparent text-white pt-24">
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-orange-400 block mb-1">
-                  Quality Assurance & Packaging
-                </span>
-                <h3 className="font-heading font-extrabold text-xl text-white mb-2">
-                  Inspecting & Packaging Facility
-                </h3>
-                <p className="text-xs text-slate-200 leading-relaxed font-medium">
-                  Workers inspecting, grading, and packaging premium agricultural superfoods in compliance with international export standards.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
 
       </div>
