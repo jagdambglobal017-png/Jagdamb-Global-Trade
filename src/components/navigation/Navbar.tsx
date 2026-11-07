@@ -55,37 +55,20 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 w-full flex justify-center ${
+        className={`fixed top-0 right-0 z-40 transition-all duration-500 px-3 sm:px-6 lg:px-8 w-full md:w-auto md:max-w-[calc(100vw-240px)] flex justify-end ${
           isScrolled ? 'py-1.5 sm:py-2.5' : 'py-2 sm:py-3.5'
         }`}
       >
-        {/* FLOATING PILL CONTAINER WITH LOGO */}
+        {/* FLOATING PILL CONTAINER */}
         <div
-          className={`rounded-full transition-all duration-500 w-full max-w-7xl ${
+          className={`rounded-full transition-all duration-500 w-full md:w-auto ${
             isScrolled ? 'glass-nav-scrolled px-3.5 sm:px-6 py-1.5 sm:py-2.5' : 'glass-nav px-3.5 sm:px-6 py-2 sm:py-3'
           }`}
         >
-          <div className="flex items-center justify-between gap-3 md:gap-8">
-
-            {/* BRAND LOGO VISIBLE IN NAVBAR */}
-            <a href="#hero" className="flex items-center gap-2 sm:gap-3 group cursor-pointer flex-shrink-0">
-              <img
-                src="/logo.png"
-                alt="Jagdamb Global Trade"
-                className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
-              />
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xs sm:text-sm md:text-base text-slateDark-950 tracking-tight leading-tight">
-                  Jagdamb Global Trade
-                </span>
-                <span className="text-[9px] sm:text-[10px] text-orange-600 font-extrabold uppercase tracking-wider hidden xs:inline">
-                  Indian Herbal Powders
-                </span>
-              </div>
-            </a>
+          <div className="flex items-center justify-end gap-2 sm:gap-3 md:gap-8">
 
             {/* DESKTOP NAV LINKS */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -107,9 +90,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Button
                 variant="primary"
                 size="sm"
-                onClick={() => onOpenEnquiry('Sample Request - Moringa, Amla, Stevia')}
+                onClick={() => onOpenEnquiry()}
               >
-                Request a Sample
+                {t.nav.enquireNow}
               </Button>
               {/* 3-BAR MENU BUTTON ON DESKTOP & PC */}
               <button
@@ -124,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* MOBILE NAVIGATION CONTROLS */}
-            <div className="flex items-center justify-end gap-2 md:hidden">
+            <div className="flex items-center justify-end gap-2 md:hidden w-full">
               <LanguageSelector
                 currentLanguage={currentLanguage}
                 onSelectLanguage={onSelectLanguage}

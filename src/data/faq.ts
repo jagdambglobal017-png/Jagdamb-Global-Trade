@@ -7,52 +7,77 @@ export interface FAQItem {
 export const faqData: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'What products does Jagdamb Global Trade export?',
-    answer: 'We specialize in bulk supply of Indian herbal powders: Moringa Leaf Powder, Amla Powder, and Stevia Powder. Other Indian herbal and superfood powders are available on request.'
+    question: 'What is Jagdamb Global Trade?',
+    answer: 'Jagdamb Global Trade is an India-based export-import firm founded in 2025, focused on agricultural products, natural superfoods, food ingredients, and other products for international trade.'
   },
   {
     id: 'faq-2',
-    question: 'Where is Jagdamb Global Trade located?',
-    answer: 'We are located in Maharashtra, India. We source directly from established Indian suppliers and handle documentation, packing, and export shipments to Dubai and the GCC.'
+    question: 'Where is Jagdamb Global Trade based?',
+    answer: 'Jagdamb Global Trade is based in kallam, Dist. Dharashiv, Maharashtra, India.'
   },
   {
     id: 'faq-3',
-    question: 'Can I get product samples before placing a bulk order?',
-    answer: 'Yes. We provide quality evaluation samples on request for food and wellness buyers in Dubai and the GCC so you can verify mesh size, color, aroma, and suitability before placing commercial orders.'
+    question: 'What products do you offer?',
+    answer: 'Our range includes natural superfoods, botanical ingredients, agricultural products, food products, spices, fruits, vegetables, coffee, tea, cashews, maize, wheat, and processed food products.'
   },
   {
     id: 'faq-4',
-    question: 'What are your Minimum Order Quantities (MOQs)?',
-    answer: 'Our standard MOQ starts from 25 kg to 50 kg depending on the product (Moringa Leaf Powder: 50 kg, Amla Powder: 50 kg, Stevia Powder: 25 kg). Sample orders and trial batches can be discussed.'
+    question: 'Do you offer products in bulk for export?',
+    answer: 'Our catalogue is designed around bulk and export enquiries. Availability, quantity, packaging, and requirements can be discussed for each product.'
   },
   {
     id: 'faq-5',
-    question: 'What packaging do you use for export shipments?',
-    answer: 'We use export-ready packing designed for international transit: 25 kg fiber drums or multi-wall food-grade paper bags, each sealed with heavy-duty food-grade inner poly liners for moisture protection.'
+    question: "Can I request a product that isn't listed?",
+    answer: 'Yes. Buyers can contact the team with specific product requirements for sourcing discussion.'
   },
   {
     id: 'faq-6',
-    question: 'What are your typical lead times for Dubai and GCC ports?',
-    answer: 'Dispatch lead time from our Maharashtra facility is typically 7 to 12 working days from commercial order confirmation. Transit times to Jebel Ali / Dubai ports typically range from 4 to 7 days by sea or 2 to 3 days by air cargo.'
+    question: 'Do you provide packaging solutions?',
+    answer: "Packaging solutions are part of Jagdamb Global Trade's growing capabilities and can be discussed according to product and buyer requirements."
   },
   {
     id: 'faq-7',
-    question: 'Do you provide lab reports with shipments?',
-    answer: 'Yes. A batch certificate of analysis (COA) / lab report is available per order upon request, covering physical parameters, moisture, and specifications.'
+    question: 'How can I enquire about a product?',
+    answer: 'Use the Enquire Now button on a product card or contact the business through WhatsApp.'
   },
   {
     id: 'faq-8',
-    question: 'What export documentation do you handle?',
-    answer: 'We handle the complete export documentation package: Commercial Invoice, Packing List, Certificate of Origin, Phytosanitary Certificate assistance, and Bill of Lading / Air Waybill.'
+    question: 'How can I contact Jagdamb Global Trade?',
+    answer: 'WhatsApp: +91 94033 40502 | Email: jagdambglobaltrade@gmail.com'
   },
   {
     id: 'faq-9',
-    question: 'How do I request a quote or product sample?',
-    answer: 'You can submit the enquiry form on our website or click the WhatsApp button to message business owner Siddhi Vijay Atkare directly at +91 94033 40502.'
+    question: 'Can international buyers contact you?',
+    answer: 'Yes. International buyers can contact Jagdamb Global Trade with product, quantity, packaging, and destination requirements.'
   },
   {
     id: 'faq-10',
-    question: 'Can I request other Indian herbal powders not listed on the website?',
-    answer: 'Yes. We can source other Indian herbal and botanical powders on request through our established supplier network across India. Simply share your required specifications and quantity.'
+    question: 'What information should I include in an enquiry?',
+    answer: 'Include product name, quantity, packaging preference, destination, and any specific requirements.'
+  },
+  {
+    id: 'faq-11',
+    question: 'Are the products sourced from India?',
+    answer: 'Jagdamb Global Trade is an India-based export-import firm and its catalogue focuses on products sourced from India for international trade.'
+  },
+  {
+    id: 'faq-12',
+    question: 'How do I get a quotation?',
+    answer: 'Submit an enquiry with product, quantity, packaging, and destination information.'
+  },
+  {
+    id: 'faq-13',
+    question: 'Can I discuss customized requirements?',
+    answer: 'Yes. Buyers can share specific product, quantity, packaging, and trade requirements.'
+  },
+  {
+    id: 'faq-14',
+    question: 'Is Jagdamb Global Trade available for long-term business relationships?',
+    answer: 'Jagdamb Global Trade aims to build reliable, long-term relationships with buyers and business partners.'
+  },
+  {
+    id: 'faq-15',
+    question: 'How quickly will my enquiry be answered?',
+    answer: 'Response time may vary depending on the product and complexity of the enquiry. Complete enquiries help the team understand requirements efficiently.'
   }
 ];

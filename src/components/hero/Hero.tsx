@@ -1,99 +1,126 @@
 import React from 'react';
-import { MessageSquare, ArrowDown, ShieldCheck, FileCheck, CheckCircle2, Clock, Sparkles } from 'lucide-react';
+import { LiquidMetalButton } from '../ui/liquid-metal-button';
+import { MessageSquare, Globe2, ArrowDown, ShieldCheck, Sparkles } from 'lucide-react';
 import { TranslationDictionary } from '../../types/translation';
 
 interface HeroProps {
-  t?: TranslationDictionary;
-  onOpenEnquiry: (productName?: string) => void;
+  t: TranslationDictionary;
+  onOpenEnquiry: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
+export const Hero: React.FC<HeroProps> = ({ t }) => {
+  const words = t.hero.headline.split(' ');
+  const orangePart = words.slice(0, words.length - 2).join(' ');
+  const greyPart = words.slice(words.length - 2).join(' ');
+
   const handleWhatsAppClick = () => {
-    const text = encodeURIComponent(
-      'Hello Jagdamb Global Trade, I am interested in samples and quotation for herbal powders (Moringa, Amla, Stevia).'
-    );
-    window.open(`https://wa.me/919403340502?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/919403340502', '_blank', 'noopener,noreferrer');
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] sm:min-h-[92vh] w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white"
+      className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slateDark-950 text-white"
     >
-      {/* Background Subtle Gradient & Botanical Radial Pattern (No generic cargo ship) */}
+      {/* 1. STATIC HIGH-VISIBILITY CARGO SHIP BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-black" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-950/20 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#475569_1px,transparent_1px)] [background-size:28px_28px] opacity-20 pointer-events-none" />
+        <img
+          src="/assets/hero_cargo_ship.jpg"
+          alt="International Cargo Container Ship Sailing Ocean - Jagdamb Global Trade"
+          className="w-full h-full object-cover object-center scale-100"
+        />
+        {/* Subtle Light Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slateDark-950/70 via-slateDark-950/20 to-slateDark-950/30" />
+      </div>
+
+      {/* DESKTOP CORNER LOGO (2X ENLARGED) */}
+      <div className="hidden md:flex absolute top-6 left-8 md:left-12 z-30 items-center justify-center transition-all duration-300 hover:scale-105">
+        <img 
+          src="/logo.png" 
+          alt="Jagdamb Global Trade" 
+          className="h-56 lg:h-72 w-auto object-contain drop-shadow-xl" 
+        />
       </div>
 
       {/* HERO CONTENT WRAPPER */}
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 text-center">
-        <div className="space-y-6 sm:space-y-7 w-full">
+      <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-12 sm:pb-16 text-center">
+        
+        {/* HERO CONTENT */}
+        <div className="space-y-5 sm:space-y-6 w-full">
           
+          {/* MOBILE HERO BRAND LOGO DISPLAY (2X ENLARGED) */}
+          <div className="flex md:hidden justify-center mb-2">
+            <img
+              src="/logo.png"
+              alt="Jagdamb Global Trade"
+              className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl animate-fadeIn"
+            />
+          </div>
+
           {/* TOP TAGLINE BADGE */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700 text-orange-400 text-[11px] sm:text-xs font-extrabold tracking-widest uppercase shadow-md backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-orange-400" />
-            <span>INDIAN HERBAL POWDER EXPORTER</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-white text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-white" />
+            <span>{t.hero.tagline} • Domestic & Global Trade</span>
           </div>
 
           {/* H1 MAIN HEADLINE */}
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl mx-auto leading-[1.15]">
-            <span className="text-orange-400">Moringa, Amla & Stevia Powder, </span>
-            <span className="text-white drop-shadow-sm">Direct from India</span>
+          <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl tracking-tight max-w-2xl mx-auto leading-tight">
+            <span className="text-orange-500">{orangePart} </span>
+            <span className="text-white drop-shadow-md">{greyPart}</span>
           </h1>
 
           {/* SUBHEADLINE TEXT */}
-          <p className="text-sm sm:text-lg lg:text-xl text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
-            Bulk supply of Indian herbal powders to food and wellness buyers in Dubai and the GCC. Samples available on request.
+          <p className="text-xs sm:text-base lg:text-lg text-slate-100 font-medium max-w-xl mx-auto leading-relaxed drop-shadow-md">
+            {t.hero.subheadline}
           </p>
 
-          {/* HERO CTA BUTTONS */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2">
-            <button
-              type="button"
-              onClick={() => onOpenEnquiry('Sample Request - Moringa, Amla, Stevia')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-sm sm:text-base tracking-wide transition-all duration-200 shadow-lg shadow-orange-500/25 active:scale-95 cursor-pointer"
-            >
-              Request a Sample
-            </button>
+          {/* HERO CTA BUTTONS WITH LIQUID METAL SHADER EFFECT */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-3">
+            {/* 1. EXPLORE PRODUCTS LIQUID METAL BUTTON */}
+            <a href="#products" className="w-full sm:w-auto">
+              <LiquidMetalButton label={t.hero.exploreBtn} />
+            </a>
 
-            <button
-              type="button"
-              onClick={handleWhatsAppClick}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm sm:text-base tracking-wide transition-all duration-200 shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
-            >
-              <MessageSquare className="w-4 h-4 text-white" />
-              <span>WhatsApp Us</span>
-            </button>
+            {/* 2. WHATSAPP US LIQUID METAL BUTTON */}
+            <div className="w-full sm:w-auto">
+              <LiquidMetalButton
+                label={t.hero.whatsAppBtn}
+                onClick={handleWhatsAppClick}
+              />
+            </div>
           </div>
 
-          {/* TRUST STRIP (4 ITEMS) */}
-          <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-800/80">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-              <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <FileCheck className="w-5 h-5 text-orange-400 mb-1" />
-                <span className="text-xs sm:text-sm font-bold text-white">IEC Registered</span>
-                <span className="text-[10px] text-slate-400">DGFT India</span>
+          {/* HERO FEATURE HIGHLIGHTS */}
+          <div className="mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center pt-5 sm:pt-6 border-t border-white/20">
+            <div className="flex flex-col items-center gap-1">
+              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
+              <div>
+                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.qualityBadge}</span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.originBadge}</span>
               </div>
+            </div>
 
-              <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <ShieldCheck className="w-5 h-5 text-orange-400 mb-1" />
-                <span className="text-xs sm:text-sm font-bold text-white">GST Registered</span>
-                <span className="text-[10px] text-slate-400">Govt of India</span>
+            <div className="flex flex-col items-center gap-1">
+              <Globe2 className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
+              <div>
+                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">Domestic & Export</span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">Pan-India & Global</span>
               </div>
+            </div>
 
-              <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <CheckCircle2 className="w-5 h-5 text-orange-400 mb-1" />
-                <span className="text-xs sm:text-sm font-bold text-white">Samples Available</span>
-                <span className="text-[10px] text-slate-400">On request</span>
+            <div className="flex flex-col items-center gap-1">
+              <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange-400 text-white flex items-center justify-center font-bold text-xs mb-0.5 sm:mb-1 shadow-md">25</span>
+              <div>
+                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.foundedBadge}</span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.firmBadge}</span>
               </div>
+            </div>
 
-              <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <Clock className="w-5 h-5 text-orange-400 mb-1" />
-                <span className="text-xs sm:text-sm font-bold text-white">Reply within 24 hours</span>
-                <span className="text-[10px] text-slate-400">Direct with owner</span>
+            <div className="flex flex-col items-center gap-1">
+              <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 text-orange-400 mb-0.5 sm:mb-1 drop-shadow-md" />
+              <div>
+                <span className="block text-xs sm:text-sm font-bold text-white drop-shadow-md">{t.hero.responseBadge}</span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">{t.hero.whatsAppBadge}</span>
               </div>
             </div>
           </div>
@@ -101,11 +128,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
         </div>
 
         {/* SCROLL INDICATOR */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <a
-            href="#about"
-            className="p-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-all border border-slate-800 active:scale-90"
-            aria-label="Scroll to About section"
+            href="#products"
+            className="p-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white transition-all shadow-md active:scale-90"
+            aria-label="Scroll to Products section"
           >
             <ArrowDown className="w-4 h-4" />
           </a>

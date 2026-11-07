@@ -8,6 +8,7 @@ import { About } from './components/about/About';
 import { WhyUs } from './components/why-us/WhyUs';
 import { ProductsSection } from './components/our-hero-product/ProductsSection';
 import { ProductEnquiryDrawer } from './components/our-hero-product/ProductEnquiryDrawer';
+import { AskAnythingSection } from './components/ask-anything/AskAnythingSection';
 import { FAQSection } from './components/faq/FAQSection';
 import { ContactSection } from './components/contact/ContactSection';
 import { Footer } from './components/footer/Footer';
@@ -92,22 +93,25 @@ export const App: React.FC = () => {
 
       {/* 4. MAIN CONTENT SECTIONS */}
       <main>
-        {/* 1. HERO SECTION (HOME) */}
-        <Hero t={t} onOpenEnquiry={handleOpenEnquiry} />
+        {/* 1. HERO SECTION WITH LIGHTRAYS & CARGO SHIP */}
+        <Hero t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
 
-        {/* 2. ABOUT US SECTION */}
-        <About t={t} />
-
-        {/* 3. PRODUCTS SECTION */}
+        {/* 2. PRODUCTS SECTION WITH REFLECTIVE CARDS (2ND PLACE) */}
         <ProductsSection t={t} onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 4. WHY US SECTION */}
+        {/* 3. ABOUT US SECTION (3RD PLACE) */}
+        <About t={t} />
+
+        {/* 4. WHY US SECTION WITH SCROLLFLOAT GSAP */}
         <WhyUs t={t} />
 
-        {/* 5. FREQUENTLY ASKED QUESTIONS SECTION */}
+        {/* 5. SECTION: YOU CAN ASK FOR ANYTHING...! */}
+        <AskAnythingSection t={t} />
+
+        {/* 6. FREQUENTLY ASKED QUESTIONS SECTION */}
         <FAQSection t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
 
-        {/* 6. DIRECT CONTACT SECTION */}
+        {/* 7. DIRECT CONTACT SECTION */}
         <ContactSection t={t} onOpenEnquiry={() => handleOpenEnquiry()} />
       </main>
 

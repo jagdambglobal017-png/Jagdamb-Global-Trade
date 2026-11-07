@@ -82,30 +82,26 @@ export const Footer: React.FC<FooterProps> = ({
           {/* COL 1: BRAND INFORMATION (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-12 sm:h-14 w-auto object-contain drop-shadow-md" />
-              <div>
-                <span className="font-heading font-extrabold text-lg text-white block tracking-tight">Jagdamb Global Trade</span>
-                <span className="text-[10px] font-bold text-orange-400 uppercase tracking-widest block">Indian Herbal Powder Exporter</span>
-              </div>
+              <img src="/logo.png" alt="Jagdamb Global Trade" className="h-36 sm:h-56 md:h-72 w-auto object-contain drop-shadow-md" />
             </div>
 
             <p className="text-xs uppercase font-extrabold tracking-widest text-slate-400">
-              Moringa, Amla & Stevia Powder • Direct from India
+              {t.footer.brandTagline}
             </p>
 
             <p className="text-sm text-slate-300 leading-relaxed font-medium">
-              Bulk supply of Indian herbal and superfood powders to food and wellness buyers in Dubai and the GCC. Clear specs, honest lead times, samples before bulk orders.
+              {t.footer.brandDesc}
             </p>
 
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 text-xs font-bold text-slate-400">
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-200">
-                FOUNDED 2025
+                {t.footer.foundedLabel}
               </span>
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-200">
                 OWNER — SIDDHI VIJAY ATKARE
               </span>
-              <span className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-700/60 text-emerald-300">
-                DUBAI & GCC EXPORTS
+              <span className="px-3 py-1 rounded-full bg-orange-950/80 border border-orange-700/60 text-orange-300">
+                DOMESTIC & GLOBAL TRADE
               </span>
             </div>
           </div>
@@ -117,8 +113,8 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300 font-medium">
               <li><a href="#hero" className="hover:text-white transition-colors">{t.nav.home}</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a></li>
               <li><a href="#products" className="hover:text-white transition-colors">{t.nav.products}</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a></li>
               <li><a href="#whyUs" className="hover:text-white transition-colors">{t.nav.whyUs}</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a></li>
@@ -128,14 +124,14 @@ export const Footer: React.FC<FooterProps> = ({
           {/* COL 3: PRODUCT CATEGORIES (lg:col-span-3) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="font-heading font-extrabold text-xs uppercase tracking-widest text-slate-400">
-              PRODUCTS
+              {t.footer.categories}
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300 font-medium">
-              <li><a href="#products" className="hover:text-white transition-colors">Moringa Leaf Powder (80–100 Mesh)</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Amla Powder (Vitamin C Rich)</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Stevia Powder (Zero Calorie Sweetener)</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Samples Available on Request</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Export-Ready Packing (25 kg Drums)</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">{t.footer.superfoodCat}</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">{t.footer.agriCat}</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">{t.footer.foodCat}</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">{t.footer.spicesCat}</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">{t.footer.packagingCat}</a></li>
             </ul>
           </div>
 
@@ -147,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-2.5 text-sm text-slate-300 font-medium">
               <p className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <span>Owner: <strong className="text-white">Siddhi Vijay Atkare</strong></span>
+                <span>{t.footer.ownerLabel}: <strong className="text-white">Siddhi Vijay Atkare</strong></span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-slate-400 flex-shrink-0" />
@@ -163,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({
               </p>
               <p className="flex items-start gap-2 text-xs leading-relaxed">
                 <MapPin className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
-                <span>Maharashtra, India</span>
+                <span>kallam,Dist. Dharashiv, Maharashtra.</span>
               </p>
             </div>
           </div>

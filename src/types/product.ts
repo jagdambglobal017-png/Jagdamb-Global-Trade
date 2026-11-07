@@ -1,33 +1,23 @@
 export type ProductCategory =
-  | 'Herbal Powders'
   | 'Superfoods'
-  | 'Food Ingredients';
-
-export interface ProductSpecs {
-  meshSize: string;
-  moisture: string;
-  colourForm: string;
-  packing: string;
-  shelfLife: string;
-  moq: string;
-  leadTime: string;
-  labReport: string;
-}
+  | 'Agricultural Products'
+  | 'Food Products'
+  | 'Spices & Ingredients';
 
 export interface Product {
   id: string;
   name: string;
+  englishName: string;
   scientificName: string;
-  oneLineUse: string;
-  origin: string;
-  hsCode: string;
-  specs: ProductSpecs;
+  category: ProductCategory;
+  tagline: string;
+  description: string;
   image: string;
-  category?: string;
-  tagline?: string;
-  description?: string;
-  highlights?: string[];
-  englishName?: string;
-  availability?: string;
+  origin: string;
+  availability: string;
   featured?: boolean;
+  highlights: string[];
+  packagingOptions?: string[];
+  hsCode?: string;
+  badge?: string;
 }

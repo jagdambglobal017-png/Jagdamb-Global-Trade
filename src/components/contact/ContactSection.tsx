@@ -26,13 +26,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-800 text-white text-xs font-extrabold tracking-widest uppercase shadow-sm">
               <Globe2 className="w-3.5 h-3.5 text-white" />
-              <span>DIRECT EXPORTER CONTACT</span>
+              <span>{t.contact.tagline}</span>
             </div>
             <h2 className="font-heading font-extrabold text-2xl sm:text-4xl text-slateDark-950 tracking-tight mt-3">
-              Contact Jagdamb Global Trade
+              {t.contact.heading}
             </h2>
             <p className="text-xs sm:text-sm text-slateDark-900 font-bold max-w-xl mx-auto leading-relaxed">
-              Connect with us for sample requests, specifications, and bulk container or LCL quotes for Dubai and the GCC. We provide honest lead times and direct WhatsApp communication.
+              Connect with us for domestic wholesale trade across India or international export shipments. We ensure prompt quotes, custom packaging, and reliable logistics.
             </p>
           </ScrollReveal>
         </div>
@@ -117,7 +117,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
             </div>
           </ScrollReveal>
 
-          {/* CARD 4: LOCATION */}
+          {/* CARD 4: HEADQUARTERS */}
           <ScrollReveal animation="fade-up" delay={400}>
             <div className="p-5 sm:p-6 rounded-3xl bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
@@ -126,13 +126,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t, onOpenEnquiry
                 </div>
                 <div>
                   <span className="text-[10px] font-extrabold text-slate-600 tracking-wider uppercase">
-                    LOCATION
+                    {t.contact.hqRole}
                   </span>
-                  <p className="text-sm text-slateDark-950 font-extrabold mt-1 leading-relaxed">
-                    Maharashtra, India
-                  </p>
-                  <p className="text-xs text-slate-600 font-medium mt-0.5">
-                    Port of Loading: JNPT / Nhava Sheva, Mumbai
+                  <p className="text-xs text-slateDark-950 font-extrabold mt-1 leading-relaxed">
+                    kallam,Dist. Dharashiv, Maharashtra.
                   </p>
                 </div>
               </div>

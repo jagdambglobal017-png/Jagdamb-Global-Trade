@@ -16,6 +16,8 @@ export const StructuredData: React.FC = () => {
     },
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'kallam',
+      addressLocality: 'Dist. Dharashiv',
       addressRegion: 'Maharashtra',
       addressCountry: 'India',
     },
@@ -23,7 +25,7 @@ export const StructuredData: React.FC = () => {
       '@type': 'ContactPoint',
       telephone: '+91-9403340502',
       contactType: 'Sales & Export Enquiries',
-      availableLanguage: ['English', 'Hindi', 'Marathi', 'Arabic'],
+      availableLanguage: ['English', 'Hindi', 'Marathi'],
     },
     sameAs: [
       'https://wa.me/919403340502',
@@ -34,15 +36,22 @@ export const StructuredData: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'WholesaleStore',
     name: 'Jagdamb Global Trade',
-    image: 'https://jagdambglobaltrade.com/products/moringa-powder.jpg',
+    image: 'https://jagdambglobaltrade.com/assets/about_warehouse.jpg',
     telephone: '+91-9403340502',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'kallam',
+      addressLocality: 'Dist. Dharashiv',
       addressRegion: 'Maharashtra',
       addressCountry: 'India',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '18.4900',
+      longitude: '75.9500',
+    },
     priceRange: '$$$',
-    description: 'Bulk Indian moringa, amla and stevia powder for export to Dubai and GCC. Samples and quotes on request.',
+    description: 'Indian export-import firm offering agricultural products, natural superfoods, food ingredients, and packaging solutions for global trade.',
   };
 
   const productListSchema = {
