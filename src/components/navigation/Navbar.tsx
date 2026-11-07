@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageSquare } from 'lucide-react';
+import { Menu, X, MessageSquare, Globe } from 'lucide-react';
 import { LanguageSelector } from '../language-selector/LanguageSelector';
 import { Button } from '../buttons/Button';
 import { LanguageCode, TranslationDictionary } from '../../types/translation';
@@ -31,6 +31,17 @@ export const Navbar: React.FC<NavbarProps> = ({
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { label: t.nav.home, href: '#hero' },
@@ -83,6 +94,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 {t.nav.enquireNow}
               </Button>
+              {/* 3-BAR MENU BUTTON ON DESKTOP & PC */}
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(true)}
+                className="p-2 sm:p-2.5 rounded-full bg-slate-800 text-white hover:bg-slate-700 active:scale-95 transition-all shadow-md flex items-center justify-center cursor-pointer"
+                aria-label="Open Navigation Menu"
+                title="Open Menu"
+              >
+                <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
             </div>
 
             {/* MOBILE NAVIGATION CONTROLS */}
@@ -92,8 +113,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectLanguage={onSelectLanguage}
               />
               <button
+                type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 sm:p-2.5 rounded-full bg-slate-800 text-white hover:bg-slate-700 active:scale-95 transition-all shadow-md flex items-center justify-center"
+                className="p-2 sm:p-2.5 rounded-full bg-slate-800 text-white hover:bg-slate-700 active:scale-95 transition-all shadow-md flex items-center justify-center cursor-pointer"
                 aria-label="Open Navigation Menu"
               >
                 <Menu className="w-5 h-5" />
@@ -103,37 +125,38 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </header>
 
-      {/* MOBILE POPUP MENU - OPENS IN THE MIDDLE AS A POPUP */}
+      {/* POPUP MENU - OPENS IN THE MIDDLE AS A POPUP (MOBILE & PC) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slateDark-950/75 backdrop-blur-md animate-fadeIn">
           {/* Backdrop click to close */}
           <div
             className="absolute inset-0"
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Centered Modal Card in the Middle (Never hidden behind Chrome address bar, with hidden scrollbar) */}
-          <div className="relative z-10 w-full max-w-md sm:max-w-lg rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 animate-scale-up space-y-4 max-h-[76dvh] sm:max-h-[82vh] overflow-y-auto no-scrollbar">
+          {/* Centered Modal Card in the Middle (Never hidden behind Chrome address bar, responsive on PC, with hidden scrollbar) */}
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] p-6 md:p-8 animate-scale-up space-y-4 max-h-[76dvh] sm:max-h-[82vh] md:max-h-[85vh] overflow-y-auto no-scrollbar">
             {/* POPUP HEADER WITH 2X LOGO & CLOSE */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-100">
               <div className="flex items-center gap-3">
                 <img
                   src="/logo.png"
                   alt="Jagdamb Global Trade"
-                  className="h-16 w-auto object-contain"
+                  className="h-16 md:h-18 w-auto object-contain"
                 />
                 <div>
-                  <h3 className="font-heading font-extrabold text-base text-slateDark-950 leading-tight">
+                  <h3 className="font-heading font-extrabold text-base md:text-lg text-slateDark-950 leading-tight">
                     Jagdamb Global Trade
                   </h3>
-                  <span className="text-xs text-orange-600 font-extrabold uppercase tracking-wider block">
+                  <span className="text-xs md:text-sm text-orange-600 font-extrabold uppercase tracking-wider block">
                     Domestic & Global Trade
                   </span>
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-100 text-slate-800 transition-colors cursor-pointer"
                 aria-label="Close Menu"
               >
                 <X className="w-5 h-5" />
@@ -147,13 +170,28 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-2xl text-sm font-extrabold text-slateDark-950 hover:bg-orange-50 hover:text-orange-600 active:bg-orange-100 transition-all flex items-center justify-between border border-transparent hover:border-orange-200"
+                  className="px-4 py-3 rounded-2xl text-sm md:text-base font-extrabold text-slateDark-950 hover:bg-orange-50 hover:text-orange-600 active:bg-orange-100 transition-all flex items-center justify-between border border-transparent hover:border-orange-200"
                 >
                   <span>{link.label}</span>
                   <span className="text-xs text-orange-500 font-bold">→</span>
                 </a>
               ))}
             </nav>
+
+            {/* QUICK LANGUAGE SELECTOR IN MENU POPUP */}
+            <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+              <span className="text-xs md:text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                <Globe className="w-4 h-4 text-orange-600" />
+                Language
+              </span>
+              <LanguageSelector
+                currentLanguage={currentLanguage}
+                onSelectLanguage={(code) => {
+                  onSelectLanguage(code);
+                  setMobileMenuOpen(false);
+                }}
+              />
+            </div>
 
             <div className="h-px bg-gray-200 my-1" />
 
