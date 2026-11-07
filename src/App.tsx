@@ -15,6 +15,7 @@ import { Footer } from './components/footer/Footer';
 import { LegalModal } from './components/common/LegalModal';
 import { PageTransition } from './components/common/PageTransition';
 import { Preloader } from './components/common/Preloader';
+import { triggerGoogleTranslate } from './lib/googleTranslate';
 import { AnimatePresence } from 'framer-motion';
 
 export const App: React.FC = () => {
@@ -38,10 +39,11 @@ export const App: React.FC = () => {
   const t = getTranslation(currentLanguage);
   const selectedLangOption = languageOptions.find((opt) => opt.code === currentLanguage);
 
-  // Handle language change with page transition & RTL layout support
+  // Handle language change with page transition, dynamic real-time translation & RTL layout support
   const handleSelectLanguage = (code: LanguageCode) => {
     if (code === currentLanguage) return;
     setIsTransitioning(true);
+    triggerGoogleTranslate(code);
     setTimeout(() => {
       setCurrentLanguage(code);
       setIsTransitioning(false);

@@ -16,6 +16,13 @@ export interface LanguageOption {
   rtl?: boolean;
 }
 
+export interface ProductTranslation {
+  name: string;
+  description: string;
+  tagline?: string;
+  highlights?: string[];
+}
+
 export interface TranslationDictionary {
   nav: {
     home: string;
@@ -162,6 +169,6 @@ export interface TranslationDictionary {
     shippingTitle: string;
     disclaimerTitle: string;
   };
-  productsList?: Record<string, { name: string; description: string; }>;
+  productsList?: Record<string, ProductTranslation>;
   faqList?: Record<string, { question: string; answer: string; }>;
 }

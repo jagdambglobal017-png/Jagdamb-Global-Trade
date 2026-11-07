@@ -127,3 +127,29 @@
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+
+/* HIDE GOOGLE TRANSLATE DEFAULT BANNERS & GADGETS FOR CLEAN BRANDED LUXURY LOOK */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element,
+.skiptranslate {
+  display: none !important;
+}
