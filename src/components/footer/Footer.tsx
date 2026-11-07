@@ -23,9 +23,9 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="relative bg-slate-900 text-slate-300 pt-20 pb-12 overflow-hidden border-t border-slate-800">
       
       {/* REACT BITS SILK WEBGL ANIMATED BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-45">
         <Silk
-          speed={4}
+          speed={24}
           scale={1.2}
           color="#334155"
           noiseIntensity={1.2}
