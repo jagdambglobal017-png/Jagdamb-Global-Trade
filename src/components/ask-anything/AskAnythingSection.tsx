@@ -1,7 +1,16 @@
 import React from 'react';
 import { ScrollReveal } from '../common/ScrollReveal';
+import { TranslationDictionary } from '../../types/translation';
 
-export const AskAnythingSection: React.FC = () => {
+interface AskAnythingProps {
+  t?: TranslationDictionary;
+}
+
+export const AskAnythingSection: React.FC<AskAnythingProps> = ({ t }) => {
+  const headingBefore = t?.askAnything?.headingBefore ?? 'YOU CAN ASK FOR ';
+  const headingHighlight = t?.askAnything?.headingHighlight ?? 'ANYTHING';
+  const headingAfter = t?.askAnything?.headingAfter ?? '...!';
+
   return (
     <section className="py-20 sm:py-28 relative overflow-hidden bg-slateDark-950 text-white border-y border-white/10">
       {/* Ambient background glows */}
@@ -13,11 +22,11 @@ export const AskAnythingSection: React.FC = () => {
         <ScrollReveal animation="fade-up">
           <div className="text-center py-4">
             <h2 className="font-heading font-black text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight sm:tracking-normal uppercase leading-tight select-none break-words">
-              <span className="text-white drop-shadow-sm">YOU CAN ASK FOR </span>
+              <span className="text-white drop-shadow-sm">{headingBefore}</span>
               <span className="text-[#F97316] drop-shadow-[0_0_25px_rgba(249,115,22,0.45)] transition-all duration-300 hover:scale-105 inline-block">
-                ANYTHING
+                {headingHighlight}
               </span>
-              <span className="text-white drop-shadow-sm">...!</span>
+              <span className="text-white drop-shadow-sm">{headingAfter}</span>
             </h2>
           </div>
         </ScrollReveal>

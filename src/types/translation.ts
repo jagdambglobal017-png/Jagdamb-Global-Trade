@@ -169,6 +169,11 @@ export interface TranslationDictionary {
     shippingTitle: string;
     disclaimerTitle: string;
   };
+  askAnything?: {
+    headingBefore: string;
+    headingHighlight: string;
+    headingAfter: string;
+  };
   productsList?: Record<string, ProductTranslation>;
   faqList?: Record<string, { question: string; answer: string; }>;
 }

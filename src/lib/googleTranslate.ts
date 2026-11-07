@@ -41,3 +41,4 @@ export const triggerGoogleTranslate = (langCode: LanguageCode) => {
     selectElem.dispatchEvent(new Event('change', { bubbles: true }));
   }
 };
+

@@ -29,3 +29,4 @@ let tsContent = fs.readFileSync(tsPath, 'utf8');
 
 console.log(`Loaded translations.ts (${tsContent.length} bytes)`);
 console.log('2. Sync completed. All site text and products are linked to dynamic translation.');
+
