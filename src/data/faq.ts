@@ -13,7 +13,7 @@ export const faqData: FAQItem[] = [
   {
     id: 'faq-2',
     question: 'Where is Jagdamb Global Trade based?',
-    answer: 'Jagdamb Global Trade is based in Dighol Vasti, Kallam, District Dharashiv, Maharashtra, India.'
+    answer: 'Jagdamb Global Trade is based in kallam, Dist. Dharashiv, Maharashtra, India.'
   },
   {
     id: 'faq-3',

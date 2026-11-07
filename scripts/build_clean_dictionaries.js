@@ -179,3 +179,4 @@ const finalFileContent = headerPart + '// Fallback dictionary map generator for 
 
 fs.writeFileSync(tsFilePath, finalFileContent, 'utf8');
 console.log(`Successfully generated updated ${tsFilePath} with pristine matching dictionaries!`);
+

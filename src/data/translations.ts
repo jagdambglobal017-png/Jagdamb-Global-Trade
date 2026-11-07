@@ -238,7 +238,7 @@ export const defaultEnglishTranslation: TranslationDictionary = {
   },
   faqList: {
     'faq-1': { question: 'What is Jagdamb Global Trade?', answer: 'Jagdamb Global Trade is an India-based export-import firm founded in 2025, focused on agricultural products, natural superfoods, food ingredients, and other products for international trade.' },
-    'faq-2': { question: 'Where is Jagdamb Global Trade based?', answer: 'Jagdamb Global Trade is based in Dighol Vasti, Kallam, District Dharashiv, Maharashtra, India.' },
+    'faq-2': { question: 'Where is Jagdamb Global Trade based?', answer: 'Jagdamb Global Trade is based in kallam, Dist. Dharashiv, Maharashtra, India.' },
     'faq-3': { question: 'What products do you offer?', answer: 'Our range includes natural superfoods, botanical ingredients, agricultural products, food products, spices, fruits, vegetables, coffee, tea, cashews, maize, wheat, and processed food products.' },
     'faq-4': { question: 'Do you offer products in bulk for export?', answer: 'Our catalogue is designed around bulk and export enquiries. Availability, quantity, packaging, and requirements can be discussed for each product.' },
     'faq-5': { question: "Can I request a product that isn't listed?", answer: 'Yes. Buyers can contact the team with specific product requirements for sourcing discussion.' },
